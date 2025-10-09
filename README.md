@@ -4,7 +4,7 @@ Repository for all my University related programs.
 
 ## Index
 
-### Introduction of Programming [https://github.com/Guttojss/University/tree/main/Introducao_prog]
+### [Introduction of Programming] (https://github.com/Guttojss/University/tree/main/Introducao_prog)
 
 
 ---
@@ -12,4 +12,4 @@ Repository for all my University related programs.
 
 ## Índice
 
-### Introdução a Programação [https://github.com/Guttojss/University/tree/main/Introducao_prog]
+### [Introdução a Programação] (https://github.com/Guttojss/University/tree/main/Introducao_prog)
