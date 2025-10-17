@@ -35,9 +35,3 @@ public class exercicio3 {
         System.out.println(quadrado(num2));
     }
 }
-
-
-/*3. Escreve um programa que inicialize dois números inteiros e calcule e apresente:
-a. o produto de ambos
-b. a divisão inteira e respetivo resto
-c. o quadrado de cada um */

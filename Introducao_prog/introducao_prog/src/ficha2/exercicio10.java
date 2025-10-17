@@ -13,7 +13,7 @@ public class exercicio10 {
         return(gasto);
     }
     public static void main(String[] args) {
-         Scanner myScanner = new Scanner(System.in);
+        Scanner myScanner = new Scanner(System.in);
         System.out.println("Escreva quanto foi gasto :");
         double gasto = myScanner.nextDouble();
         System.out.println(gastado(gasto));

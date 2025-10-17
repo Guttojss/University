@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class exercicio5 {
 
-    static double converter(temperatura)
+    static double farTemp(double num1)
     {
-        return(temperatura*1.8*32);
+        return(num1*1.8+32);
     }
     public static void main(String[] args) {
-         Scanner myScanner = new Scanner(System.in);
+        Scanner myScanner = new Scanner(System.in);
         System.out.println("Escreva a temperatura :");
         double temperatura = myScanner.nextDouble();
-        System.out.println(converter(temperatura));
+        System.out.println(farTemp(temperatura));
     }
 }
