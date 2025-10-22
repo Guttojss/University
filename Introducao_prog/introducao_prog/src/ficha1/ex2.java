@@ -1,6 +1,6 @@
 package ficha1;
 
-public class exercicio2 {
+public class ex2 {
     
     static void Hello(){
         System.out.println("Olá Alunos!\n\nBem Vindos á disciplina de \"Algoritmia e Programação\"");

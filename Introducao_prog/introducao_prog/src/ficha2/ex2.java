@@ -2,7 +2,7 @@ package ficha2;
 
 import java.util.Scanner;
 
-public class exercicio2 {
+public class ex2 {
     static int soma(int num1, int num2, int num3){
         return num1+num2+num3;
     }
@@ -12,6 +12,7 @@ public class exercicio2 {
         int num1 = myScanner.nextInt();
         int num2 = myScanner.nextInt();
         int num3 =  myScanner.nextInt();
+        myScanner.close();
         System.out.println(soma(num1,num2,num3));
     }
 }

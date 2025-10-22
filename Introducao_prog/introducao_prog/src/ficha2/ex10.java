@@ -2,7 +2,7 @@ package ficha2;
 
 import java.util.Scanner;
 
-public class exercicio10 {
+public class ex10 {
     static double gastado(double gasto)
     {
         for(int i=0;i < 3; i++) {
@@ -16,6 +16,7 @@ public class exercicio10 {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Escreva quanto foi gasto :");
         double gasto = myScanner.nextDouble();
+        myScanner.close();
         System.out.println(gastado(gasto));
     }
 }

@@ -2,7 +2,7 @@ package ficha2;
 
 import java.util.Scanner;
 
-public class exercicio5 {
+public class ex5 {
 
     static double farTemp(double num1)
     {
@@ -12,6 +12,7 @@ public class exercicio5 {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Escreva a temperatura :");
         double temperatura = myScanner.nextDouble();
+        myScanner.close();
         System.out.println(farTemp(temperatura));
     }
 }

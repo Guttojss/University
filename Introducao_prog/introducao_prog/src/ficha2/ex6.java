@@ -2,7 +2,7 @@ package ficha2;
 
 import java.util.Scanner;
 
-public class exercicio6 {
+public class ex6 {
     static double calcRaio(double raio)
     {
         raio=raio*raio;
@@ -12,6 +12,7 @@ public class exercicio6 {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Escreva o raio do ciruclo :");
         double raio = myScanner.nextDouble();
+        myScanner.close();
         System.out.println(calcRaio(raio));
     }
 }

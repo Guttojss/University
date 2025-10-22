@@ -2,7 +2,7 @@ package ficha2;
 
 import java.util.Scanner;
 
-public class exercicio8 {
+public class ex8 {
 
     static double media(double num1, double num2, double num3)
     {
@@ -14,6 +14,7 @@ public class exercicio8 {
         double nota1 = myScanner.nextDouble();
         double nota2 = myScanner.nextDouble();
         double nota3 = myScanner.nextDouble();
+        myScanner.close();
         System.out.println(media(nota1, nota2, nota3));
     }
 }

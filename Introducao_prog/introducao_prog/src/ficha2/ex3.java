@@ -2,7 +2,7 @@ package ficha2;
 
 import java.util.Scanner;
 
-public class exercicio3 {
+public class ex3 {
     static int produto(int num1, int num2)
     {
         return(num1*num2);
@@ -28,6 +28,7 @@ public class exercicio3 {
         Scanner myScanner = new Scanner(System.in);
         int num1 = myScanner.nextInt();
         int num2 = myScanner.nextInt();
+        myScanner.close();
         System.out.println(produto(num1,num2));
         System.out.println(divisao(num1,num2));
         System.out.println(resto(num1,num2));

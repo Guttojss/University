@@ -2,7 +2,7 @@ package ficha2;
 
 import java.util.Scanner;
 
-public class exercicio4 {
+public class ex4 {
 
     static double imc(int peso, double altura)
     {
@@ -19,6 +19,7 @@ public class exercicio4 {
         int peso = myScanner.nextInt();
         System.out.println("Escreva a sua altura em centimetros : ");
         double altura = myScanner.nextFloat();
+        myScanner.close();
         System.out.println(imc(peso,altura));
     }
 }

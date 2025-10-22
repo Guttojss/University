@@ -2,7 +2,7 @@ package ficha2;
 
 import java.util.Scanner;
 
-public class exercicio9 {
+public class ex9 {
     static double calcSegundos(int horas, int minutos, int segundos)
     {
         horas=horas*3600;
@@ -18,6 +18,7 @@ public class exercicio9 {
         int minutos = myScanner.nextInt();
         System.out.println("Escreva um segundo :");
         int segundos = myScanner.nextInt();
+        myScanner.close();
         System.out.println(calcSegundos(horas,minutos,segundos));
     }
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
     
 
-public class exercicio11 {
+public class ex11 {
 
     static double salarioFinal(double salario, double bonus, double comisao, double vendas, double carros)
     {
@@ -30,8 +30,8 @@ public class exercicio11 {
 
         System.out.println("Escreva o bonus:");
         double bonus = myScanner.nextDouble();
-
-
+        myScanner.close();
+        
         System.out.println(salarioFinal(salarioBase, bonus, comisao, vendas, carros));
     }
 }
