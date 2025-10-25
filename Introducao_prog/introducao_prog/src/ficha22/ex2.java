@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class ex2 {
      public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("Escreva o preco :");
-        char carac = myScanner.next().charAt(0);
+        System.out.println("Escreva uma MAIUSCULA :");
+        String carac = myScanner.next().toLowerCase();
         myScanner.close();
         
-        System.out.println();
+        System.out.println(carac);
     }
 }
 

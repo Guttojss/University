@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class ex3 {
      public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("Escreva o preco :");
-        char carac = myScanner.next().charAt(0);
+        System.out.println("Escreva um numero :");
+        int num1 = myScanner.nextInt();
         myScanner.close();
         
-        System.out.println();
+        System.out.println((char)num1);
     }
 }
 

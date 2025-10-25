@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class ex1 {
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("Escreva o preco :");
+        System.out.println("Escreva um numero de 0 a 9 :");
         char num1 = myScanner.next("[0-9]").charAt(0);
         myScanner.close();
-        System.out.println(num1);
+        System.out.println((char) num1);
     }
 }
 
