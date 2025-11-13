@@ -5,7 +5,6 @@
 * Have a initial touch with programming concepts and thoughts.
 * Basic knowledge of arrays, integers, characters and booleans.
 
-
 ---
 
 # Introdução á Programação
