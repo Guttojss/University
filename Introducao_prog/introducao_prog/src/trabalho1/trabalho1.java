@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class trabalho1{
 
     public static void clear(){System.out.println("\n\n\n\n\n\n\n\n\n\n\n");}
+    public static void espaco(){System.out.print("    ");}
     
-    public static void menuPrincipal()
+    public static void menuPrincipal(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating)
     {
         clear();
         Scanner myScanner = new Scanner(System.in);
@@ -18,10 +19,10 @@ public class trabalho1{
         char opcao = myScanner.next().charAt(0);
         
         switch (opcao) {
-            case 'V': menuVisualizar(); break;
-            case 'M': menuMarcar(); break;
-            case 'E': menuEditar(); break;
-            case 'T': menuEstatisticas(); break;
+            case 'V': menuVisualizar(nItens,titulo,tipo,ano,visto,rating); break;
+            case 'M': menuMarcar(nItens,titulo,tipo,ano,visto,rating); break;
+            case 'E': menuEditar(nItens,titulo,tipo,ano,visto,rating); break;
+            case 'T': menuEstatisticas(nItens,titulo,tipo,ano,visto,rating); break;
             case 'S': break;
             default:
                 System.out.println("Escreva um caracter Válido");break;
@@ -30,7 +31,7 @@ public class trabalho1{
         return;
     }
     
-    public static void menuVisualizar(){
+    public static void menuVisualizar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating){
         clear();
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Visulizar por (T)odos");
@@ -43,13 +44,13 @@ public class trabalho1{
         char opcao = myScanner.next().charAt(0);
         
         switch (opcao) {
-            case 'T': break;
+            case 'T': output(nItens,titulo,tipo,ano,visto,rating); break;
             case 'A': break;
             case 'N': break;
             case 'P': break;
             case 'R': break;
             case 'M': break;
-            case 'V': menuPrincipal(); break;
+            case 'V': menuPrincipal(nItens,titulo,tipo,ano,visto,rating); break;
             default:
                 System.out.println("Escreva um caracter Válido");break;
         }
@@ -57,7 +58,7 @@ public class trabalho1{
         return;
     }
 
-    public static void menuMarcar(){
+    public static void menuMarcar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating){
         clear();
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Marcar como visto por (P)osição");
@@ -72,7 +73,7 @@ public class trabalho1{
             case 'T': break;
             case 'D': break;
             case 'A': break;
-            case 'V': menuPrincipal(); break;
+            case 'V': menuPrincipal(nItens,titulo,tipo,ano,visto,rating); break;
             default:
                 System.out.println("Escreva um caracter Válido");break;
         }
@@ -81,7 +82,7 @@ public class trabalho1{
     }
 
 
-    public static void menuEditar(){
+    public static void menuEditar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating){
         clear();
         Scanner myScanner = new Scanner(System.in);
         System.out.println("(A)dicionar  item no fim");
@@ -96,7 +97,7 @@ public class trabalho1{
             case 'I': break;
             case 'P': break;
             case 'N': break;
-            case 'V': menuPrincipal(); break;
+            case 'V': menuPrincipal(nItens,titulo,tipo,ano,visto,rating); break;
             default:
                 System.out.println("Escreva um caracter Válido");break;
         }
@@ -104,7 +105,7 @@ public class trabalho1{
         return;
 
     }
-    public static void menuEstatisticas(){
+    public static void menuEstatisticas(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating){
         clear();
          Scanner myScanner = new Scanner(System.in);
         System.out.println("(P)ercentagem de vistos");
@@ -117,13 +118,29 @@ public class trabalho1{
             case 'P': break;
             case 'M': break;
             case 'D': break;
-            case 'V': menuPrincipal(); break;
+            case 'V': menuPrincipal(nItens,titulo,tipo,ano,visto,rating); break;
             default:
                 System.out.println("Escreva um caracter Válido");break;
         }
         myScanner.close();
         return;
     }
+
+    public static void output(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating){
+        System.out.print("Nº");espaco();
+        System.out.print("Título");espaco();
+        System.out.print("Tipo");espaco();
+        System.out.print("Ano");espaco();
+        System.out.print("Visto");espaco();
+        System.out.print("Rating");System.out.println();
+        System.out.println("-----------------------------------------------");
+        for(int i=0;i!=nItens;i++)
+        {
+            System.out.print(i+1+"    "+titulo[i]+"   "+tipo[i]+"   "+ano[i]+"    "+visto[i]+"   "+rating[i]);
+
+            System.out.println();
+        }
+    };
     public static void main(String[] args) {
         int tamMax = 100 ;
         String[] titulo = new String[tamMax];   // Nome do conteudo
@@ -131,8 +148,15 @@ public class trabalho1{
         int[] ano = new int[tamMax];            // Ano de lançamento
         boolean[] visto = new boolean[tamMax];  // Se foi visto ou não
         int[] rating = new int[tamMax];         // Classificação da conteudo
-        int nItens = 0;
-        menuPrincipal();
+        int nItens = 4;
+       // menuPrincipal(nItens,titulo,tipo,ano,visto,rating);
+
+        titulo[0] = "The Matrix"; tipo[0] = 'F'; ano[0] = 1999; visto[0] = true; rating[0] = 9;
+        titulo[1] = "Breaking Bad"; tipo[1] = 'S'; ano[1] = 2008; visto[1] = true; rating[1] = 10;
+        titulo[2] = "Oppenheimer"; tipo[2] = 'F'; ano[2] = 2023; visto[2] = false; rating[2] = 0;
+        titulo[3] = "Dark"; tipo[3] = 'S'; ano[3] = 2017; visto[3] = false; rating[3] = 0;
+
+       output(nItens,titulo,tipo,ano,visto,rating);
     }
 
 }
