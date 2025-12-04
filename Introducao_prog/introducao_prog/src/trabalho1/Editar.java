@@ -1,0 +1,72 @@
+package trabalho1;
+
+import java.util.Scanner;
+import trabalho1.Visualizar;
+
+public class Editar {
+    // Utilitários.
+    public static void clear(){System.out.println("\n\n\n\n\n\n\n\n\n\n\n");}
+    
+    // Adiciona Conteudos aos arrays.
+    public static int adicionar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating, Scanner myScanner, int tamMax)
+    {
+        clear();
+        if(nItens>tamMax) {System.out.println("Atingiu o limite de Itens."); return -1;}    
+        System.out.println("Qual o Título : ");
+        titulo[nItens] = myScanner.nextLine();
+        System.out.println("É uma série ou um filme?");
+        tipo[nItens] = myScanner.next().toUpperCase().charAt(0);
+        System.out.println("Qual o ano de lançamento?");
+        ano[nItens] = myScanner.nextInt();
+        System.out.println("Já foi visto?");
+        visto[nItens] = myScanner.nextBoolean();
+        System.out.println("Qual a nota de 0 a 10?");
+        rating[nItens] = myScanner.nextInt();
+        System.out.println("Item Adicionado com sucesso!");
+        nItens++;
+        return nItens;
+    }
+
+    public static int menuEditar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner,int tamMax){
+        clear();
+        System.out.println("(A)dicionar  item no fim");
+        System.out.println("Adicionar (I)tem na posição n");
+        System.out.println("Apagar item na (P)osição n");
+        System.out.println("Apagar ite(N)s vistos");
+        System.out.println("(V)oltar");
+        char opcao = myScanner.next().toUpperCase().charAt(0);
+        myScanner.nextLine(); // Limpa o Input
+        
+        switch (opcao) {
+            case 'A': nItens=adicionar(nItens, titulo, tipo, ano, visto, rating,myScanner,tamMax);break;
+            case 'I': break;
+            case 'P': break;
+            case 'N': break;
+            case 'V': break;
+            default:
+                System.out.println("Escreva um caracter Válido");break;
+        }
+        return nItens;
+
+    }
+    /*public static void main(String[] args) {
+        Scanner myScanner = new Scanner(System.in);
+        int tamMax = 100 ;
+        String[] titulo = new String[tamMax];   // Nome do conteudo
+        char[] tipo = new char[tamMax];         // Se é Filme(F) Ou Série (S)
+        int[] ano = new int[tamMax];            // Ano de lançamento
+        boolean[] visto = new boolean[tamMax];  // Se foi visto ou não
+        int[] rating = new int[tamMax];         // Classificação da conteudo
+        //Adiciona 4 elementos a todos os arrays.
+        //int nItens = 4;
+        //titulo[0] = "The Matrix"; tipo[0] = 'F'; ano[0] = 1999; visto[0] = true; rating[0] = 9;
+        //titulo[1] = "Breaking Bad"; tipo[1] = 'S'; ano[1] = 2008; visto[1] = true; rating[1] = 10;
+        //titulo[2] = "Oppenheimer"; tipo[2] = 'F'; ano[2] = 2023; visto[2] = false; rating[2] = 0;
+        //titulo[3] = "Dark"; tipo[3] = 'S'; ano[3] = 2017; visto[3] = false; rating[3] = 0;
+        int nItens=0;
+        nItens= menuEditar(nItens,titulo,tipo,ano,visto,rating,myScanner,tamMax);
+        Visualizar.menuVisualizar(nItens, titulo, tipo, ano, visto, rating, myScanner);
+        myScanner.close();
+    }*/
+}
+
