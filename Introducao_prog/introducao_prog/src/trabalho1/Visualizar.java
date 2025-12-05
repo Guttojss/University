@@ -12,13 +12,14 @@ public class Visualizar {
 
     public static void output(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating, int filtroAno,boolean filtroVistos,String filtroPalavra,int filtroRating )
     {
-    //A maior largura do título
+    /* 
+        //A maior largura do título
     int maior = 0;
     for (int i = 0; i < nItens; i++) {
         if (titulo[i] != null && titulo[i].length() > maior)
             maior = titulo[i].length();
-    }
-
+    }*/
+    int maior=10;
     // Cria formato dinâmico
     String formato = "%-4s %-"+maior+"s %-6s %-6s %-8s %-6s%n";
 
