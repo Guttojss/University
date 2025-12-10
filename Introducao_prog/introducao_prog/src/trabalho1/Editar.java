@@ -8,28 +8,61 @@ public class Editar {
     public static void clear(){System.out.println("\n\n\n\n\n\n\n\n\n\n\n");}
     
     // Adiciona Conteudos aos arrays.
-    public static int adicionar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating, Scanner myScanner, int tamMax)
+    public static int adicionar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating, Scanner myScanner, int tamMax,int pos)
     {
         clear();
-        if(nItens>tamMax) {System.out.println("Atingiu o limite de Itens."); return -1;}    
-        System.out.println("Qual o Título : ");
-        titulo[nItens] = myScanner.nextLine();
-        System.out.println("É uma série ou um filme?");
-        tipo[nItens] = myScanner.next().toUpperCase().charAt(0);
-        System.out.println("Qual o ano de lançamento?");
-        ano[nItens] = myScanner.nextInt();
-        System.out.println("Já foi visto?");
-        visto[nItens] = myScanner.nextBoolean();
-        System.out.println("Qual a nota de 0 a 10?");
-        rating[nItens] = myScanner.nextInt();
-        System.out.println("Item Adicionado com sucesso!");
-        nItens++;
+        if(pos==-1) 
+        {
+            if(nItens>tamMax) {System.out.println("Atingiu o limite de Itens."); return -1;}    
+                System.out.println("Qual o Título : ");
+                titulo[nItens] = myScanner.nextLine();
+                System.out.println("É uma série ou um filme?");
+                tipo[nItens] = myScanner.next().toUpperCase().charAt(0);
+                System.out.println("Qual o ano de lançamento?");
+                ano[nItens] = myScanner.nextInt();
+                System.out.println("Já foi visto?");
+                visto[nItens] = myScanner.nextBoolean();
+                System.out.println("Qual a nota de 0 a 10?");
+                rating[nItens] = myScanner.nextInt();
+                System.out.println("Item Adicionado com sucesso!");
+                nItens++;
+        }
+        
+
+        if(pos!=-1) // Adiciona na posição
+        {
+            for(int i=nItens;i>=pos;i--)
+            { 
+                if(pos >= 0 && pos<=tamMax) // Verifica se o item existe.
+                {   
+                    if(i!=pos)
+                    {
+                            titulo[i]=titulo[i-1]; tipo[i]=tipo[i-1]; ano[i]=ano[i-1]; visto[i]=visto[i-1]; rating[i]=rating[i-1];
+                    }
+                    else 
+                    {
+                        System.out.println("Qual o Título : ");
+                        titulo[pos] = myScanner.nextLine();
+                        System.out.println("É uma série ou um filme?");
+                        tipo[pos] = myScanner.next().toUpperCase().charAt(0);
+                        System.out.println("Qual o ano de lançamento?");
+                        ano[pos] = myScanner.nextInt();
+                        System.out.println("Já foi visto?");
+                        visto[pos] = myScanner.nextBoolean();
+                        System.out.println("Qual a nota de 0 a 10?");
+                        rating[pos] = myScanner.nextInt();
+                        nItens++;
+                    }
+                    
+                } else System.out.println("Atingiu o limite de Itens.");
+            }
+        }
         return nItens;
     }
     // Apaga arrays
     public static int apagar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner,int pos)
-    {
-        if(pos==-1)
+    {   
+        if(pos==-1) // Apaga os que já foram vistos
         {
             for(int i=0;i!=nItens;i++)
             {   
@@ -44,17 +77,21 @@ public class Editar {
                 }
             }
         }
-        if(pos!=-1)
+        if(pos!=-1) // apaga na posição
         {
-            for(int i=0;i!=nItens;i++)
+            for(int i=1;i!=nItens-1;i++)
             { 
-                for(int j=i;j!=nItens;j++)
-                {
-                    titulo[j]=titulo[i]; tipo[j]=tipo[i]; ano[j]=ano[i]; visto[j]=visto[i]; rating[j]=rating[i];
-                }
-            } 
+                if(pos<nItens && pos >= 0) // Verifica se o item existe.
+                {   
+                    if(i!=pos)
+                    {
+                            titulo[i]=titulo[i+1]; tipo[i]=tipo[i+1]; ano[i]=ano[i+1]; visto[i]=visto[i+1]; rating[i]=rating[i+1];
+                    }
+                    
+                } else System.out.println("Não existe esse item.");
+            }
+            nItens--;
         }
-        
         return nItens;
     }
 
@@ -69,9 +106,12 @@ public class Editar {
         myScanner.nextLine(); // Limpa o Input
         
         switch (opcao) {
-            case 'A': nItens=adicionar(nItens, titulo, tipo, ano, visto, rating,myScanner,tamMax);break;
-            case 'I': break;
-            case 'P': System.out.println("Qual é a posição?"); pos= myScanner.nextInt(); pos--; 
+            case 'A': pos=-1; nItens=adicionar(nItens, titulo, tipo, ano, visto, rating,myScanner,tamMax,pos);break;
+            case 'I': System.out.println("Qual é a posição?"); pos= myScanner.nextInt(); pos--;
+            myScanner.nextLine(); // limpa o input
+            nItens=adicionar(nItens, titulo, tipo, ano, visto, rating,myScanner,tamMax,pos); break;
+            case 'P': System.out.println("Qual é a posição?"); pos= myScanner.nextInt(); pos--;
+            myScanner.nextLine(); // limpa o input 
             nItens=apagar(nItens, titulo, tipo, ano, visto, rating, myScanner, pos); break;
             case 'N': pos=-1; nItens=apagar(nItens, titulo, tipo, ano, visto, rating,myScanner,pos); break;
             case 'V': break;

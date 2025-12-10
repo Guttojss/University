@@ -15,3 +15,6 @@ Falta Fazer :
 
     Ficheiros Visualizar e Editar são apenas testes que apenas possuem o seu proprio menu e ações.
     Visualizar está a funcionar com import, apenas falta adicionar filtro Multi Condicional.
+
+
+    Semi-Finalizado : Menu Editar | Falta : Proteção de dados
