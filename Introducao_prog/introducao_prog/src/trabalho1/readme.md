@@ -1,11 +1,4 @@
-Falta Fazer : 
-    - Ficheiro Outputs : 
-        |Falta fazer : Output multi-condicional.|
-        |Falta fazer : dar output "Não há itens" quando é null ou 0.|
-    - Ficheiro Estatisticas
-        | Falta fazer : Destribuição por década. |
-
-        To-Do
+        To-Do Menu Editar.
     - Proteção de dados
     - Inputs : Anos terem 4 digitos.
     - Inputs : Filmes / Série apenas aceitar "F,f,S,s" e transformar em minusculas.
@@ -18,3 +11,6 @@ Falta Fazer :
 
 
     Semi-Finalizado : Menu Editar | Falta : Proteção de dados
+    Semi-Finalizado : Menu Visualizar | Falta : Output Multicondicional e Dar output "Não há itens".
+    
+    Finalizado : MenuEstatisticas.
