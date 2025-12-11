@@ -34,15 +34,39 @@ public class Estatisticas {
     }
 
 
-    public static void destribuicaoDecada(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating)
+    public static void destribuicaoDecada(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,int tamMax)
     {
-        for(int i=0;i!=nItens;i++)
-        {
-            // Preciso saber o ano mais baixo e mais alto.
+        int[] anoTemp = new int[tamMax];
+
+        int ano_maior=0;
+        int ano_menor=9999;
+        for(int i=0;i<nItens;i++)
+        {   
+            //Verificar os décimais exemplo 1992 -> 199,2 logo -> 1990
+            anoTemp[i] = (ano[i]/10)*10;
+            //Descobre o menor e maior ano.
+            if(anoTemp[i]>ano_maior) { ano_maior=anoTemp[i]; }
+            if(anoTemp[i]<ano_menor) { ano_menor=anoTemp[i]; }
         }
+
+        //Conta os itens por decada
+        for(int d=ano_menor;d<=ano_maior;d=d+10)
+        {
+            int contAno=0;
+            for(int i=0;i!=nItens;i++)
+            {
+                
+                if(anoTemp[i]==d) contAno++;
+            }
+            // Dá output
+            if(contAno>0)
+                {
+                    System.out.printf("%d -> %d | %d Itens \n",d,d+9,contAno);
+                }
+        } 
     }
 
-    public static void menuEstatisticas(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner){
+    public static void menuEstatisticas(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner,int tamMax){
         clear();
         System.out.println("(P)ercentagem de vistos");
         System.out.println("(M)édia de rating dos vistos");
@@ -54,7 +78,7 @@ public class Estatisticas {
         switch (opcao) {
             case 'P': percentagemVistos(nItens, titulo, tipo, ano, visto, rating); break;
             case 'M': mediaRating(nItens, titulo, tipo, ano, visto, rating); break;
-            case 'D': break; // faço depois
+            case 'D': destribuicaoDecada(nItens, titulo, tipo, ano, visto, rating,tamMax);break; // faço depois
             case 'V': break;
             default:
                 System.out.println("Escreva um caracter Válido");break;
@@ -80,7 +104,7 @@ public class Estatisticas {
         titulo[1] = "Breaking Bad"; tipo[1] = 'S'; ano[1] = 2008; visto[1] = true; rating[1] = 10;
         titulo[2] = "Oppenheimer"; tipo[2] = 'F'; ano[2] = 2023; visto[2] = false; rating[2] = 0;
         titulo[3] = "Dark"; tipo[3] = 'S'; ano[3] = 2017; visto[3] = false; rating[3] = 0;
-        menuEstatisticas(nItens, titulo, tipo, ano, visto, rating, myScanner);
+        menuEstatisticas(nItens, titulo, tipo, ano, visto, rating, myScanner,tamMax);
 
         myScanner.close();
     }
