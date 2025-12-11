@@ -2,8 +2,8 @@ Falta Fazer :
     - Ficheiro Outputs : 
         |Falta fazer : Output multi-condicional.|
         |Falta fazer : dar output "Não há itens" quando é null ou 0.|
-
-
+    - Ficheiro Estatisticas
+        | Falta fazer : Destribuição por década. |
 
         To-Do
     - Proteção de dados
