@@ -32,7 +32,7 @@ public class marcar {
          {
             for(int i=0;i!=nItens;i++)
                 if(visto[i]!=false)
-                    
+                    //
          }
     }
 
