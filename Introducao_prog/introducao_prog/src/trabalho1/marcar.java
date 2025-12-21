@@ -8,7 +8,7 @@ public class marcar {
     public static void clear(){System.out.println("\n\n\n\n\n\n\n\n\n\n\n");}
 
 
-    public static void marcar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,int pos,String nome, Scanner myScanner,int id)
+    public static void marcar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,int pos,String nome, Scanner myScanner,int id,int ultimovisto)
     {
         // Marca como visto por posição.
         if(pos!=0)
@@ -32,7 +32,8 @@ public class marcar {
          {
             for(int i=0;i!=nItens;i++)
                 if(visto[i]!=false)
-                    //
+                    ultimovisto=i;
+            visto[ultimovisto]=false;
          }
     }
 
@@ -41,7 +42,7 @@ public class marcar {
         clear();
         System.out.println("Marcar como visto por (P)osição"); int pos = 0; 
         System.out.println("Marcar como visto por (T)itulo"); String nome=null;
-        System.out.println("(D)esamarcar último marcado como visto");
+        System.out.println("(D)esamarcar último marcado como visto"); int uvisto=0;
         System.out.println("(A)atribuir / alterar rating por número"); int id=-1;
         System.out.println("(V)oltar");
         char opcao = myScanner.next().toUpperCase().charAt(0);
@@ -49,12 +50,12 @@ public class marcar {
         
         switch (opcao) {
             case 'P': System.out.println("Qual é a posição?"); pos = myScanner.nextInt();
-            marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id);break;
+            marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id,uvisto);break;
             case 'T': System.out.println("Qual é o Titulo?"); nome = myScanner.nextLine();
-            marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id);break;
-            case 'D': break;
+            marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id,uvisto);break;
+            case 'D': uvisto=-1; marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id,uvisto);break;
             case 'A': System.out.println("Qual é o numero?"); id = myScanner.nextInt();
-            marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id);break;
+            marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id,uvisto);break;
             case 'V': break;
             default:
                 System.out.println("Escreva um caracter Válido");break;
