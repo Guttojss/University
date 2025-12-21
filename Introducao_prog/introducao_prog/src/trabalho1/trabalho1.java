@@ -20,6 +20,8 @@ public class trabalho1{
             {
                 System.out.print("Erro: Escreva um inteiro dentro dos limites. ");
             }
+            //Limpar o imput.
+            myScanner.nextLine();
         }
     }
     //Leitura de Bools.
@@ -38,7 +40,10 @@ public class trabalho1{
             {
                 System.out.print("Erro: Escreva algo válido.");
             }
+            //Limpar o imput.
+            myScanner.nextLine();
         }
+        
     }
     //Leitura de tipos.
     public static char lerTipo(Scanner myScanner){
@@ -56,6 +61,26 @@ public class trabalho1{
             {
                 System.out.print("Erro: Escreva algo válido.");
             }
+            //Limpar o imput.
+            myScanner.nextLine();
+        }
+    }
+    //Leitura de opcao.
+    public static char lerOpcao(Scanner myScanner)
+    {
+        while(true)
+        {
+            String opcao = myScanner.next().toUpperCase();
+            if (opcao.length() == 1) 
+            {
+                return opcao.charAt(0);
+            } 
+            else 
+            {
+                System.out.print("Erro: introduza apenas um carácter: ");
+            }
+            //Limpar o imput.
+            myScanner.nextLine();
         }
     }
 
@@ -255,8 +280,7 @@ public class trabalho1{
         System.out.println("Visualiar por (R)ating mínimo"); int filtroRating = 0 ;
         System.out.println("Visualiar por (M)ulticritério"); int multi=0;
         System.out.println("(V)oltar");
-        char opcao = myScanner.next().toUpperCase().charAt(0);
-        myScanner.nextLine(); // Limpa o input.
+        char opcao = lerOpcao(myScanner);
         
         switch (opcao) {
             case 'T': output(nItens,titulo,tipo,ano,visto,rating,filtroAno,filtroVistos,filtroPalavra,filtroRating, multi,filtroTipo); break;
@@ -293,8 +317,7 @@ public class trabalho1{
         System.out.println("Visualiar por (R)ating mínimo"); 
         System.out.println("(V)oltar");
         System.out.println("Quando acabar de escolher, use o \"(V)oltar\"");
-        opcao = myScanner.next().toUpperCase().charAt(0);
-        myScanner.nextLine(); // Limpa o input.
+        opcao = lerOpcao(myScanner);
 
         switch (opcao) {
             case 'P': System.out.println("Qual a Palavra?"); filtroPalavra = myScanner.nextLine();break;
@@ -317,8 +340,7 @@ public class trabalho1{
         System.out.println("(D)esamarcar último marcado como visto"); int uvisto=0;
         System.out.println("(A)atribuir / alterar rating por número"); int id=-1;
         System.out.println("(V)oltar");
-        char opcao = myScanner.next().toUpperCase().charAt(0);
-        myScanner.nextLine(); // Limpa o input.
+        char opcao = lerOpcao(myScanner);
         
         switch (opcao) {
             case 'P': System.out.println("Qual é a posição?"); pos = lerInt(0, 100, myScanner);
@@ -343,16 +365,13 @@ public class trabalho1{
         System.out.println("Apagar item na (P)osição n"); int pos=0;
         System.out.println("Apagar ite(N)s vistos");
         System.out.println("(V)oltar"); 
-        char opcao = myScanner.next().toUpperCase().charAt(0);
-        myScanner.nextLine(); // Limpa o Input
+        char opcao = lerOpcao(myScanner);
         
         switch (opcao) {
             case 'A': pos=-1; nItens=adicionar(nItens, titulo, tipo, ano, visto, rating,myScanner,tamMax,pos);break;
-            case 'I': System.out.println("Qual é a posição?"); pos= myScanner.nextInt(); pos--;
-            myScanner.nextLine(); // limpa o input
+            case 'I': System.out.println("Qual é a posição?"); pos=lerInt(0, 100, myScanner); pos--;
             nItens=adicionar(nItens, titulo, tipo, ano, visto, rating,myScanner,tamMax,pos); break;
-            case 'P': System.out.println("Qual é a posição?"); pos= myScanner.nextInt(); pos--;
-            myScanner.nextLine(); // limpa o input 
+            case 'P': System.out.println("Qual é a posição?"); pos=lerInt(0, 100, myScanner);
             nItens=apagar(nItens, titulo, tipo, ano, visto, rating, pos); break;
             case 'N': pos=-1; nItens=apagar(nItens, titulo, tipo, ano, visto, rating,pos); break;
             case 'V': break;
@@ -368,8 +387,7 @@ public class trabalho1{
         System.out.println("(M)édia de rating dos vistos");
         System.out.println("Destribuição por (D)écada");
         System.out.println("(V)oltar");
-        char opcao = myScanner.next().toUpperCase().charAt(0);
-        myScanner.nextLine(); // Limpa o input.
+        char opcao = lerOpcao(myScanner);
         
         switch (opcao) {
             case 'P': percentagemVistos(nItens, titulo, tipo, ano, visto, rating); break;
@@ -506,7 +524,7 @@ public class trabalho1{
         System.out.println("(E)ditar");
         System.out.println("es(T)atisticas");
         System.out.println("(S)air");
-        opcao = myScanner.next().toUpperCase().charAt(0);
+        opcao = lerOpcao(myScanner);
         
         switch (opcao) {
             case 'V': menuVisualizar(nItens,titulo,tipo,ano,visto,rating,myScanner); break; // Falta Output Condional
