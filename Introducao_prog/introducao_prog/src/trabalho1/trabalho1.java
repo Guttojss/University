@@ -3,7 +3,64 @@ package trabalho1;
 import java.util.Scanner;
 public class trabalho1{
     // Utilitários.
+    //Limpa o CMD.
     public static void clear(){System.out.println("\n\n\n\n\n\n\n\n\n\n\n");}
+
+    //Leitura de Ints.
+    public static int lerInt(int minimo,int maximo,Scanner myScanner){
+        int inteiro=0;
+        while (true) 
+        {
+            inteiro = myScanner.nextInt();
+            if (inteiro >= minimo && inteiro<=maximo) 
+            {
+                return inteiro;
+            } 
+            else 
+            {
+                System.out.print("Erro: Escreva um inteiro dentro dos limites. ");
+            }
+        }
+    }
+    //Leitura de Bools.
+    public static boolean lerBool(Scanner myScanner){
+        String bool=null;
+        while (true) 
+        {
+            bool = myScanner.nextLine().trim().toLowerCase();
+            if (bool=="true" || bool=="sim" || bool=="yes" || bool=="y" || bool=="x") 
+            {
+                return true;
+            }else 
+            if(bool=="no" || bool=="nao" || bool=="não" || bool=="n" || bool=="false" || bool=="o") 
+                return false;
+            else 
+            {
+                System.out.print("Erro: Escreva algo válido.");
+            }
+        }
+    }
+
+        public static char lerTipo(Scanner myScanner){
+        String carac=null;
+        while (true) 
+        {
+            carac = myScanner.nextLine().toLowerCase();
+            if (carac=="filme" || carac=="f") 
+            {
+                return 'f';
+            }else 
+            if(carac=="serie" || carac=="série" || carac=="s") 
+                return 's';
+            else 
+            {
+                System.out.print("Erro: Escreva algo válido.");
+            }
+        }
+    }
+
+
+    //Menus e Metodos dos Menus.
 
     // Adiciona Conteudos aos arrays.
     public static int adicionar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating, Scanner myScanner, int tamMax,int pos)
@@ -15,13 +72,13 @@ public class trabalho1{
                 System.out.println("Qual o Título : ");
                 titulo[nItens] = myScanner.nextLine();
                 System.out.println("É uma série ou um filme?");
-                tipo[nItens] = myScanner.next().toUpperCase().charAt(0);
+                tipo[nItens] = lerTipo(myScanner);
                 System.out.println("Qual o ano de lançamento?");
-                ano[nItens] = myScanner.nextInt();
+                ano[nItens] = lerInt(0,2040,myScanner);
                 System.out.println("Já foi visto?");
-                visto[nItens] = myScanner.nextBoolean();
+                visto[nItens] = lerBool(myScanner);
                 System.out.println("Qual a nota de 0 a 10?");
-                rating[nItens] = myScanner.nextInt();
+                rating[nItens] = lerInt(0,10,myScanner);
                 System.out.println("Item Adicionado com sucesso!");
                 nItens++;
         }
@@ -42,13 +99,13 @@ public class trabalho1{
                         System.out.println("Qual o Título : ");
                         titulo[pos] = myScanner.nextLine();
                         System.out.println("É uma série ou um filme?");
-                        tipo[pos] = myScanner.next().toUpperCase().charAt(0);
+                        tipo[pos] = lerTipo(myScanner);
                         System.out.println("Qual o ano de lançamento?");
-                        ano[pos] = myScanner.nextInt();
+                        ano[pos] = lerInt(0,2040, myScanner);
                         System.out.println("Já foi visto?");
-                        visto[pos] = myScanner.nextBoolean();
+                        visto[pos] = lerBool(myScanner);
                         System.out.println("Qual a nota de 0 a 10?");
-                        rating[pos] = myScanner.nextInt();
+                        rating[pos] = lerInt(0, 10, myScanner);
                         nItens++;
                     }
                     
@@ -58,7 +115,7 @@ public class trabalho1{
         return nItens;
     }
     // Apaga arrays
-    public static int apagar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner,int pos)
+    public static int apagar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,int pos)
     {   
         if(pos==-1) // Apaga os que já foram vistos
         {
@@ -104,7 +161,7 @@ public class trabalho1{
         {
         //Chama menu visualizar por titulo com filtro nome.
         System.out.println("Qual é a posição do Item?");
-        pos=myScanner.nextInt();
+        pos=lerInt(-1, 100, myScanner);
         visto[pos]=true; 
         }
 
@@ -112,7 +169,7 @@ public class trabalho1{
          if(id!=-1)
          {
             System.out.println("Qual é o novo rating?");
-            rating[id]=myScanner.nextInt();
+            rating[id]=lerInt(0, 10, myScanner);
          }
 
          //Ultimo como visto.
@@ -186,25 +243,7 @@ public class trabalho1{
         } 
     }
     
-    // Adiciona Conteudos aos arrays.
-    public static int adicionar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating, Scanner myScanner, int tamMax)
-    {
-        clear();
-        if(nItens>tamMax) {System.out.println("Atingiu o limite de Itens."); return -1;}    
-        System.out.println("Qual o Título : ");
-        titulo[nItens] = myScanner.nextLine();
-        System.out.println("É uma série ou um filme?");
-        tipo[nItens] = myScanner.next().toUpperCase().charAt(0);
-        System.out.println("Qual o ano de lançamento?");
-        ano[nItens] = myScanner.nextInt();
-        System.out.println("Já foi visto?");
-        visto[nItens] = myScanner.nextBoolean();
-        System.out.println("Qual a nota de 0 a 10?");
-        rating[nItens] = myScanner.nextInt();
-        System.out.println("Item Adicionado com sucesso!");
-        nItens++;
-        return nItens;
-    }
+    
     
     public static void menuVisualizar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner){
         clear();
@@ -220,13 +259,13 @@ public class trabalho1{
         
         switch (opcao) {
             case 'T': output(nItens,titulo,tipo,ano,visto,rating,filtroAno,filtroVistos,filtroPalavra,filtroRating, multi,filtroTipo); break;
-            case 'A': System.out.println("Qual o ano?"); filtroAno = myScanner.nextInt(); 
+            case 'A': System.out.println("Qual o ano?"); filtroAno = lerInt(0, 2040, myScanner); 
             output(nItens,titulo,tipo,ano,visto,rating,filtroAno,filtroVistos,filtroPalavra,filtroRating, multi,filtroTipo); break;
             case 'N': filtroVistos = true; 
             output(nItens,titulo,tipo,ano,visto,rating,filtroAno,filtroVistos,filtroPalavra,filtroRating, multi,filtroTipo); break;
             case 'P':  System.out.println("Qual a Palavra?"); filtroPalavra = myScanner.nextLine(); 
             output(nItens,titulo,tipo,ano,visto,rating,filtroAno,filtroVistos,filtroPalavra,filtroRating, multi,filtroTipo); break;
-            case 'R': System.out.println("Qual o Rating Minmo?"); filtroRating = myScanner.nextInt(); 
+            case 'R': System.out.println("Qual o Rating Minmo?"); filtroRating = lerInt(0, 10, myScanner); 
             output(nItens,titulo,tipo,ano,visto,rating,filtroAno,filtroVistos,filtroPalavra,filtroRating, multi,filtroTipo); break;
             case 'M': menuMulticriterios(nItens,titulo,tipo,ano,visto,rating,myScanner,multi); break;
             case 'V': break;
@@ -257,10 +296,10 @@ public class trabalho1{
 
         switch (opcao) {
             case 'P': System.out.println("Qual a Palavra?"); filtroPalavra = myScanner.nextLine();break;
-            case 'A': System.out.println("Qual o ano?"); filtroAno = myScanner.nextInt(); break;
-            case 'T': System.out.println("Qual o tipo"); filtroTipo=myScanner.next().toUpperCase().charAt(0); break;
+            case 'A': System.out.println("Qual o ano?"); filtroAno = lerInt(0, 2040, myScanner); break;
+            case 'T': System.out.println("Qual o tipo"); filtroTipo=lerTipo(myScanner); break;
             case 'N': filtroVistos = true; break;
-            case 'R': System.out.println("Qual o Rating Minmo?"); filtroRating = myScanner.nextInt();break;
+            case 'R': System.out.println("Qual o Rating Minmo?"); filtroRating = lerInt(0, 10, myScanner);break;
             default:
                 System.out.println("Insira uma opcão válida.");break;
         }
@@ -280,12 +319,12 @@ public class trabalho1{
         myScanner.nextLine(); // Limpa o input.
         
         switch (opcao) {
-            case 'P': System.out.println("Qual é a posição?"); pos = myScanner.nextInt();
-            marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id,uvisto);break;
+            case 'P': System.out.println("Qual é a posição?"); pos = lerInt(0, 100, myScanner);
+            marcar(nItens, titulo, tipo, ano, visto, rating, pos-1, nome,myScanner,id,uvisto);break;
             case 'T': System.out.println("Qual é o Titulo?"); nome = myScanner.nextLine();
             marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id,uvisto);break;
             case 'D': uvisto=-1; marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id,uvisto);break;
-            case 'A': System.out.println("Qual é o numero?"); id = myScanner.nextInt()-1;
+            case 'A': System.out.println("Qual é o numero?"); id = lerInt(0, 100, myScanner);
             marcar(nItens, titulo, tipo, ano, visto, rating, pos, nome,myScanner,id,uvisto);break;
             case 'V': break;
             default:
@@ -312,8 +351,8 @@ public class trabalho1{
             nItens=adicionar(nItens, titulo, tipo, ano, visto, rating,myScanner,tamMax,pos); break;
             case 'P': System.out.println("Qual é a posição?"); pos= myScanner.nextInt(); pos--;
             myScanner.nextLine(); // limpa o input 
-            nItens=apagar(nItens, titulo, tipo, ano, visto, rating, myScanner, pos); break;
-            case 'N': pos=-1; nItens=apagar(nItens, titulo, tipo, ano, visto, rating,myScanner,pos); break;
+            nItens=apagar(nItens, titulo, tipo, ano, visto, rating, pos); break;
+            case 'N': pos=-1; nItens=apagar(nItens, titulo, tipo, ano, visto, rating,pos); break;
             case 'V': break;
             default:  System.out.println("Escreva um caracter Válido"); break;
         }
