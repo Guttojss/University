@@ -11,6 +11,5 @@
 
 
     Semi-Finalizado : Menu Editar | Falta : Proteção de dados
-    Semi-Finalizado : Menu Visualizar | Falta : Output Multicondicional e Dar output "Não há itens".
     
-    Finalizado : MenuEstatisticas.
+    Finalizado : MenuEstatisticas, MenuMarcar, MenuVisualizar.
