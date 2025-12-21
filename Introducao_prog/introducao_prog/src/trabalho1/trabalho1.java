@@ -40,8 +40,8 @@ public class trabalho1{
             }
         }
     }
-
-        public static char lerTipo(Scanner myScanner){
+    //Leitura de tipos.
+    public static char lerTipo(Scanner myScanner){
         String carac=null;
         while (true) 
         {
@@ -114,7 +114,7 @@ public class trabalho1{
         }
         return nItens;
     }
-    // Apaga arrays
+    // Apaga Conteudo dos arrays
     public static int apagar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,int pos)
     {   
         if(pos==-1) // Apaga os que já foram vistos
@@ -159,7 +159,7 @@ public class trabalho1{
 
         if(nome!=null)
         {
-        //Chama menu visualizar por titulo com filtro nome.
+        output(nItens,titulo,tipo,ano,visto,rating,-1,false,nome,-1, 0,' ');
         System.out.println("Qual é a posição do Item?");
         pos=lerInt(-1, 100, myScanner);
         visto[pos]=true; 
@@ -181,7 +181,7 @@ public class trabalho1{
             visto[ultimovisto]=false;
          }
     }
-
+    //Faz a média de todos os ratings.
     public static void mediaRating(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating)
     {
         int soma = 0;
@@ -196,7 +196,8 @@ public class trabalho1{
         }
         System.out.println("A Média dos ratings dos itens vistos é : "+ (double) soma/qnt);
     }
-     public static void percentagemVistos(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating)
+    //Faz a percetagem dos itens vistos.
+    public static void percentagemVistos(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating)
     {
         double soma=0;
         for(int i=0;i!=nItens;i++)
@@ -210,7 +211,7 @@ public class trabalho1{
         System.out.println("A percetagem de itens vistos é : "+percetagem*100+"%" );
     }
 
-
+    // Faz uma tabela com a quantidade de items per decada.
     public static void destribuicaoDecada(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,int tamMax)
     {
         int[] anoTemp = new int[tamMax];
@@ -244,7 +245,7 @@ public class trabalho1{
     }
     
     
-    
+    // Menu Visualiar
     public static void menuVisualizar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner){
         clear();
         System.out.println("Visulizar por (T)odos"); char filtroTipo=' ';
@@ -274,6 +275,7 @@ public class trabalho1{
         }
         return;
     }
+    // Menu de visualizar com MultiCritérios.
     public static void menuMulticriterios(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner,int multi)
     {
         char opcao;
@@ -306,7 +308,7 @@ public class trabalho1{
         }while(opcao!='V');
         output(nItens,titulo,tipo,ano,visto,rating,filtroAno,filtroVistos,filtroPalavra,filtroRating, multi,filtroTipo);
     }
-
+    //Menu marcar.
     public static int menuMarcar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner)
     {
         clear();
@@ -333,7 +335,7 @@ public class trabalho1{
         return 0;
     }
 
-
+    //Menu Marcar.
     public static int menuEditar(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner,int tamMax){
         clear();
         System.out.println("(A)dicionar  item no fim");
@@ -359,6 +361,7 @@ public class trabalho1{
         return nItens;
 
     }
+    //Menu Estatisticas.
     public static void menuEstatisticas(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating,Scanner myScanner,int tamMax){
         clear();
         System.out.println("(P)ercentagem de vistos");
@@ -378,7 +381,7 @@ public class trabalho1{
         }
         return;
     }
-
+    // Dá output dos itens.
     public static void output(int nItens,String[] titulo,char[] tipo,int[] ano,boolean[] visto,int[] rating, int filtroAno,boolean filtroVistos,String filtroPalavra,int filtroRating,int multi, char filtroTipo)
     {
         if(nItens<0)
