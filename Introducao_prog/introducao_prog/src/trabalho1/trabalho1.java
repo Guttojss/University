@@ -1,5 +1,5 @@
 package trabalho1;
-// Trabalho realizado por : Rodrigo Amaro 202505w64 e David Almeida (nmr dele) Engenheiria Informática.
+// Trabalho realizado por : Rodrigo Amaro 202505w64 e David Almeida 20250563 Engenheiria Informática T2.
 import java.util.Scanner;
 public class trabalho1{
     // Utilitários.
