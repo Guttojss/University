@@ -15,3 +15,6 @@
 
 ## Will I continue working on the project besides the assigment?
 - Probably not, maybe add a database and refine some details, but nothing much.
+
+## Am i accepting sugestions?
+Yes, i am always looking for ways of improvement, if you have any thoughts or ideas that you feel like sharing please reach out to me!
