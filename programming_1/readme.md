@@ -1,5 +1,8 @@
 # Introduction of Programming
 
+## What exacly is this class?
+- (a description of the class + usefull info)
+
 ## Objectives
 * Have a initial touch with programming concepts and thoughts.
 * Basic knowledge of arrays & Strings, integers & floats, characters and booleans.
