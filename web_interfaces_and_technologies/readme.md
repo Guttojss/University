@@ -4,7 +4,7 @@
 - (a description of the class + usefull info)
 
 ## Objectives
-* Have a initial touch with web development concepts and thoughts.
+* Have a initial touch with web development concepts.
 * Basic knowledge of HTML,CSS and JavaScript structure and syntax.
 
 ## Subfolders
