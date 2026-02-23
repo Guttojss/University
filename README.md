@@ -16,3 +16,8 @@
 - [Introduction of Programming](https://github.com/Guttojss/University/tree/main/programming_1)
 - [Logic Systems](https://github.com/Guttojss/University/tree/main/logical_systems)
 ### 2nd Semester
+- [Data Structures and Algorithms] (https://github.com/Guttojss/University/tree/main/data_structures_and_algorithms)
+- [Databases] (https://github.com/Guttojss/University/tree/main/databases)
+- [Human-Machine Interfaces] (https://github.com/Guttojss/University/tree/main/human-machine_interfaces)
+- [Object Oriented Programming] (https://github.com/Guttojss/University/tree/main/object_oriented_programming)
+- [Web Interfaces and Technologies] (https://github.com/Guttojss/University/tree/main/web_interfaces_and_technologies)
