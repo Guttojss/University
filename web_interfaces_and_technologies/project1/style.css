@@ -1,6 +1,7 @@
 body{
     background:url(sources/background.gif) repeat-x;
     font-family: Arial;
+    margin: 0px;
 }
 
 div#header{
@@ -31,14 +32,65 @@ ul#nav li{
 ul#nav a{
     text-decoration: none;
     color: #231f20;
-    
+    padding-top: 8px;
 }
 
-#yapping
-{
-
+ul#nav a:hover{
+    border-top: 5px solid #FC0;
 }
 
-footer{
-    background-color: orange;
+ul#nav a.ativa{
+    border-top: 5px solid #F90;
 }
+
+div#banner{
+    width: 800px;
+    margin:0px auto;
+    height: 237px;
+    position: relative;
+    background:url(sources/banner.jpg) no-repeat;
+}
+
+div#banner a img{
+    border: none;
+}
+
+div#banner a{
+    position: absolute;
+    top: 168px;
+    left: 620;
+}
+
+div#section{
+    width: 800px;
+    margin: 15px auto;
+}
+
+div.article{
+    width: 250px;
+    float: left;
+    margin:0 8px;
+}
+
+div.article h1{
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+div.article a{
+    text-decoration: none;
+    color:  #FFF;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+
+div.article p{
+    color: black;
+}
+
+
+div#footer{
+    background-color: #ffab08;
+    width: 800px;
+    margin: 0 auto;
+}   
