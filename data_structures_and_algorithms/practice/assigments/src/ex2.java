@@ -1,3 +1,4 @@
+package practice.assigments.src;
 public class ex2 {
     public static int[] quicksort(int[] vetor, int tam)
     {

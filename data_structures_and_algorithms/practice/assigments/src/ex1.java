@@ -84,9 +84,10 @@ public class ex1 {
     {
         int min=0;
         int max=tam;
+        int metade=0;
         
         do{
-            int metade = max+(max-min)/2;
+            metade = max+(max-min)/2;
             if(vetor[metade]==valor)
                 return metade;
 
