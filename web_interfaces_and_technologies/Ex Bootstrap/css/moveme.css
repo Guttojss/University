@@ -1,0 +1,14 @@
+.intro-block{
+    background: url(../imagens/PURPALT.PNG) repeat;
+    padding: 100px 15px 60px;
+    color: #fff;
+}
+
+.text-muted{
+    color: #e9e6df;
+    font-weight: 100;
+}
+
+.tpad{
+    padding-top: 20px;
+}
