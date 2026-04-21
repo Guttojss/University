@@ -27,18 +27,18 @@ public class Consulta {
 		this.diaMarcacao = dia;
 	}
 
-	public Utente getUtente(){
-		return this.utente;
+	public Utente getUtente(Consulta consulta){
+		return consulta.utente;
 	}
 
-	public Especialidade getEspecialidade(){
-		 return this.especialidade;
+	public Especialidade getEspecialidade(Consulta consulta){
+		 return consulta.especialidade;
 	}
-	public LocalTime getHoraMarcacao(){
-		 return this.horaMarcacao;
+	public LocalTime getHoraMarcacao(Consulta consulta){
+		 return consulta.horaMarcacao;
 	}
-	public LocalDate getDiaMarcacao(){
-		 return this.diaMarcacao;
+	public LocalDate getDiaMarcacao(Consulta consulta){
+		 return consulta.diaMarcacao;
 	}
 
 	public void setUtente(Utente utente){

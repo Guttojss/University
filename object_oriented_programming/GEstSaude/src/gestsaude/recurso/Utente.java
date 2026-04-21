@@ -1,5 +1,7 @@
 package gestsaude.recurso;
 
+import java.util.Collection;
+
 /**
  * Representa um Utente. Deve ter um nome, o número de SNS e armazenar as
  * consultas que tem marcadas no futuro.
@@ -8,9 +10,9 @@ public class Utente {
 
     String nome;
     String sns;
-    Consulta consultas;
+    Collection<Consulta> consultas;
     
-    private Utente(String nome, String sns,Consulta consultas)
+    private Utente(String nome, String sns,Collection<Consulta> consultas)
     {
         this.nome = nome;
         this.sns = sns;
@@ -27,9 +29,9 @@ public class Utente {
         return utente.sns;
     }
 
-    public static Consulta getMarcacoes(Utente utente)
+    public static Collection<Consulta> getMarcacoes(Utente utente)
     {
-        return utente.consultas;
+        return utente.consultas ;
     }
 
     public void setNome(String nome)
@@ -42,7 +44,7 @@ public class Utente {
         this.sns = SNS;
     }
     
-    public void setConsultas(Consulta consultas)
+    public void setConsultas(Collection<Consulta> consultas)
     {
         this.consultas = consultas;
     }

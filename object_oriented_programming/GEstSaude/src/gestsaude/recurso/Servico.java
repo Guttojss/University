@@ -21,19 +21,19 @@ public class Servico {
     }
 
     public String getId(Servico servico){
-        return this.id;
+        return servico.id;
     }
 
      public String getDescricao(Servico servico){
-        return this.descricao;
+        return servico.descricao;
     }
 
      public String getSala(Servico servico){
-        return this.sala;
+        return servico.sala;
     }
 
     public Senha getSenha(Servico servico){
-        return this.senhas;
+        return servico.senhas;
     }
 
     public void setId(String id)

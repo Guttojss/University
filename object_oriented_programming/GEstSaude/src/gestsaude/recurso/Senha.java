@@ -22,16 +22,16 @@ public class Senha {
 		this.horaPrevista = horaPrevista;
 	}
 
-	public String getId(){
-		return this.id;
+	public String getId(Senha senha){
+		return senha.id;
 	}
 
-	public LocalTime getHoraEntrada(){
-		return this.horaEntrada;
+	public LocalTime getHoraEntrada(Senha senha){
+		return senha.horaEntrada;
 	}
 
-	public LocalTime getHoraPrevista(){
-		return this.horaPrevista;
+	public LocalTime getHoraPrevista(Senha senha){
+		return senha.horaPrevista;
 	}
 
 	public void setId(String id){
