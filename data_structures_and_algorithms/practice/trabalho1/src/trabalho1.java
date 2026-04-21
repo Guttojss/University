@@ -9,7 +9,7 @@ public class trabalho1{
     public static ArrayList<String> lerFicheiro(ArrayList<String> palavras)
     {
         // To-Do : Mudar o Path para outra forma sem mostrar o PATH inteiro
-        File ficheiro = new File("University\\data_structures_and_algorithms\\practice\\trabalho1\\palavras.txt");
+        File ficheiro = new File("palavras.txt");
         Scanner leitor = null;
 
         try 
@@ -242,14 +242,16 @@ public class trabalho1{
 
         ArrayList<String> palavras = new ArrayList<>(); 
         palavras = lerFicheiro(palavras);
+
+       mergeSort(palavras, 0, palavras.size()-1);
+       System.out.println(procuraLinear(palavras, "algoritmo"));
        
         //selecao(palavras);
         //insercao(palavras);
         //bubblesort(palavras);
-        mergeSort(palavras, 0, palavras.size()-1);
+        //mergeSort(palavras, 0, palavras.size()-1);
         //quickSort(palavras, 0, palavras.size()-1);
-
-        System.out.println(procuraLinear(palavras, "Xarões")); // Linear Desorganizado
+        //System.out.println(procuraLinear(palavras, "Xarões")); // Linear Desorganizado
         //System.out.println(procuraBinaria(palavras, "Xarões")); // Binario Organizado
        
         //timer finalização

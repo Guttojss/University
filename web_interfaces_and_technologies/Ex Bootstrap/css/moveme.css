@@ -1,3 +1,19 @@
+html, body{
+    font-family: 'lato','sans-serif';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    background-color: #eeefe9;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Abel','sans-serif';
+}
+
+b,strong{
+    font-weight: 400;
+}
+
 .intro-block{
     background: url(../imagens/PURPALT.PNG) repeat;
     padding: 100px 15px 60px;
@@ -11,4 +27,46 @@
 
 .tpad{
     padding-top: 20px;
+}
+
+.marketing{
+    background-color: #e9e6df;
+}
+
+hr{
+    border-top: 1px solid #c9c9c9;
+}
+
+.info {
+    background: #ffa753 url(../imagens/SKYLINE.PNG) repeat-x bottom;
+    padding: 80px 0;
+}
+
+.info small{
+    color: #eeefe9;
+}
+
+.info a{
+    color: #fff;
+}
+
+.info a:hover{
+    color: #333;
+}
+
+.tab-pane{
+    padding: 40px 10px 0 10px;
+}
+
+.ftr{
+    background: url(../imagens/shattered.png) repeat;
+    padding: 80px 0 60px 0;
+}
+
+.ftr address, .ftr a, .ftr p {
+    color: #fff;
+}
+
+.ft_space{
+    padding: 0 10px;
 }

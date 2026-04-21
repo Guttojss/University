@@ -9,6 +9,12 @@ public class Senha {
 
 	private GEstSaude gest; // deve ter ligação ao sistema
 
+	private Senha(){
+		String id;
+		String horaEntrada;
+		String horaPrevista;
+	}
+
 	/**
 	 * Indica qual o próximo serviço que tem de visitar
 	 * 

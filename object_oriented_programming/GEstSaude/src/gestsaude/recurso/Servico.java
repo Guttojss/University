@@ -8,6 +8,47 @@ import java.util.Collection;
  */
 public class Servico {
 
+    String id;
+    String descricao;
+    String sala;
+    String[] senhas;
+
+    private Servico(String id,String descricao,String sala){
+        this.id= id;
+        this.descricao=descricao;
+        this.sala=sala;
+    }
+
+    // Getters
+    public String getId(Servico servico){
+        return this.id;
+    }
+
+     public String getDescricao(Servico servico){
+        return this.descricao;
+    }
+
+     public String getSala(Servico servico){
+        return this.sala;
+    }
+
+    //Setters
+
+    public void setId(String id)
+    {
+        this.id = id;
+    }
+
+     public void setDescricao(String descricao)
+    {
+        this.descricao = descricao;
+    }
+
+     public void setSala(String Sala)
+    {
+        this.sala = Sala;
+    }
+
     /**
      * Retorna a próxima senha a ser atendida por este serviço
      * 
