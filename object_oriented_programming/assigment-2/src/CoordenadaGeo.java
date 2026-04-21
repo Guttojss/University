@@ -25,8 +25,9 @@ public class CoordenadaGeo {
     {
         return cords;
     }  
+
     //Setters
-    public  void setLatitude(double latitude)
+    public void setLatitude(double latitude)
     {
         if (latitude>=-90 && latitude <= 90)
             this.latitude = latitude;
@@ -43,6 +44,7 @@ public class CoordenadaGeo {
         setLatitude(latitude);
         setLongitude(longitude);
     }
+    
     // Devolve as cords em string.
     public static String toString(CoordenadaGeo cords)
     {
@@ -71,6 +73,7 @@ public class CoordenadaGeo {
         return cords.longitude/15;
 
     }
+
     //distanciaPara -> retorna em kms a distancia entre duas coords (formula toda lixada)
     public static void distanciaPara()
     {

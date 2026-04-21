@@ -14,6 +14,35 @@ public class Especialidade {
 	// para simplificar, cada serviço vai ter sempre o mesmo horário
 	private HorarioDiario horario = new HorarioDiario(LocalTime.of(8, 10), LocalTime.of(19, 50));
 
+	String id;
+	String descricao;
+
+	String[] consultas;
+	String[] senhas;
+	
+	private Especialidade(String id, String descricao){
+		this.id = id;
+		this.descricao = descricao;
+	}
+
+	// Getters
+	public String getId(Especialidade especialidade){
+		return this.id;
+	}
+
+	public String getDescricao(Especialidade especialidade){
+		return this.descricao;
+	}
+	// Setters
+	public void setId(Especialidade especialidade){
+		this.id = id;
+	}
+
+	public void setDescricao(Especialidade especialidade){
+		this.descricao = descricao;
+	}
+
+
 	/**
 	 * Retorna qual a próxima senha em espera
 	 * 
@@ -47,6 +76,7 @@ public class Especialidade {
 	 * 
 	 * @return as senhas que estão em lista de espera para serem atendidas
 	 */
+
 	public Collection<Senha> getEmEspera() {
 		// TODO implementar este método
 		return null;

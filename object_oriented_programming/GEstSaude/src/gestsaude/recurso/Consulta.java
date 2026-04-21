@@ -11,6 +11,14 @@ public class Consulta {
 	 * 
 	 * @return true, se a consulta já está validada
 	 */
+
+	public Consulta(){
+		
+	}
+
+
+
+	// Metodos
 	public boolean estaValidada() {
 		// TODO implementar este método
 		return false;

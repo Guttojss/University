@@ -10,7 +10,7 @@ public class trabalho1{
     public static ArrayList<String> lerFicheiro(ArrayList<String> palavras)
     {
         // To-Do : Mudar o Path para outra forma sem mostrar o PATH inteiro
-        File ficheiro = new File("University\\data_structures_and_algorithms\\practice\\trabalho1\\palavras.txt");
+        File ficheiro = new File("palavras.txt");
         Scanner leitor = null;
 
         try 
@@ -241,11 +241,12 @@ public class trabalho1{
         // Timer Inicialização
         long inicio, fim, tempo;
         inicio=System.currentTimeMillis();
-
         
        ArrayList<String> palavras = new ArrayList<>(); 
        palavras = lerFicheiro(palavras);
 
+       mergeSort(palavras, 0, palavras.size()-1);
+       System.out.println(procuraLinear(palavras, "algoritmo"));
        
 
         //timer finalização
