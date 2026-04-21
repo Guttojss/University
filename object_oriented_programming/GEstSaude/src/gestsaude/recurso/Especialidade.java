@@ -16,16 +16,16 @@ public class Especialidade {
 
 	String id;
 	String descricao;
-
-	String[] consultas;
-	String[] senhas;
+	Consulta consultas;
+	Senha senhas;
 	
-	private Especialidade(String id, String descricao){
+	private Especialidade(String id, String descricao, Consulta consultas, Senha senhas){
 		this.id = id;
 		this.descricao = descricao;
+		this.consultas = consultas;
+		this.senhas = senhas;
 	}
 
-	// Getters
 	public String getId(Especialidade especialidade){
 		return this.id;
 	}
@@ -33,15 +33,31 @@ public class Especialidade {
 	public String getDescricao(Especialidade especialidade){
 		return this.descricao;
 	}
-	// Setters
-	public void setId(Especialidade especialidade){
+
+	public Consulta getConsulta(Especialidade especialidade){
+		return this.consultas;
+	}
+
+	public Senha getSenhas(Especialidade especialidade){
+		return this.senhas;
+	}
+
+	public void setId(String id){
 		this.id = id;
 	}
 
-	public void setDescricao(Especialidade especialidade){
+	public void setDescricao(String descricao){
 		this.descricao = descricao;
 	}
 
+	public void setConsulta(Consulta consultas){
+		this.consultas = consultas;
+	}
+
+	public void setSenhas(Senha senhas)
+	{
+		this.senhas = senhas;
+	}
 
 	/**
 	 * Retorna qual a próxima senha em espera

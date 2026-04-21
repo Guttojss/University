@@ -8,16 +8,14 @@ public class Utente {
 
     String nome;
     String sns;
-    Consulta[] consultas;
+    Consulta consultas;
     
-    private Utente(String nome, String sns,Consulta[] consultas)
+    private Utente(String nome, String sns,Consulta consultas)
     {
         this.nome = nome;
         this.sns = sns;
         this.consultas = consultas;
     }
-
-    // Getters
 
     public static String getNome(Utente utente)
     {
@@ -29,26 +27,22 @@ public class Utente {
         return utente.sns;
     }
 
-    public static Consulta[] getMarcacoes(Utente utente)
+    public static Consulta getMarcacoes(Utente utente)
     {
         return utente.consultas;
     }
 
-    // Setters
-
     public void setNome(String nome)
     {
-        // Meter aqui regras sobre os nome. ex : Meter a primeira letra sempre em caps
         this.nome = nome;
     }
 
     public void setSNS(String SNS)
     {
-        // Meter aqui regras sobre o SNS ex: Se é valido
         this.sns = SNS;
     }
     
-    public void setConsultas(Consulta[] consultas)
+    public void setConsultas(Consulta consultas)
     {
         this.consultas = consultas;
     }

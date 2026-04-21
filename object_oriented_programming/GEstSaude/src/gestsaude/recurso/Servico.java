@@ -11,15 +11,15 @@ public class Servico {
     String id;
     String descricao;
     String sala;
-    String[] senhas;
+    Senha senhas;
 
-    private Servico(String id,String descricao,String sala){
+    private Servico(String id,String descricao,String sala,Senha senhas){
         this.id= id;
         this.descricao=descricao;
         this.sala=sala;
+        this.senhas= senhas;
     }
 
-    // Getters
     public String getId(Servico servico){
         return this.id;
     }
@@ -32,7 +32,9 @@ public class Servico {
         return this.sala;
     }
 
-    //Setters
+    public Senha getSenha(Servico servico){
+        return this.senhas;
+    }
 
     public void setId(String id)
     {
