@@ -26,19 +26,19 @@ public class Especialidade {
 		this.senhas = senhas;
 	}
 
-	public String getId(Especialidade especialidade){
+	public String getId(){
 		return this.id;
 	}
 
-	public String getDescricao(Especialidade especialidade){
+	public String getDescricao(){
 		return this.descricao;
 	}
 
-	public Consulta getConsulta(Especialidade especialidade){
+	public Consulta getConsulta(){
 		return this.consultas;
 	}
 
-	public Senha getSenhas(Especialidade especialidade){
+	public Senha getSenhas(){
 		return this.senhas;
 	}
 

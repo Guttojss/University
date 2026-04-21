@@ -27,7 +27,7 @@ public class Senha {
 		return this.id;
 	}
 
-	public LocalTime getHoraEntrada( ){
+	public LocalTime getHoraEntrada(){
 		return this.horaEntrada;
 	}
 
