@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class trabalho1{
     
     //Ler o palavras.txt
@@ -33,8 +32,7 @@ public class trabalho1{
         return palavras;
     }
     
-    //organizar
-    // merge sort e quick sort.
+    // Organizar
     // Seleção
     public static ArrayList<String> selecao(ArrayList<String> palavras)
     {
@@ -57,7 +55,6 @@ public class trabalho1{
             }
         return palavras;
     } 
-    
     
     //Inserção
     public static ArrayList<String> insercao(ArrayList<String> palavras)
@@ -142,7 +139,6 @@ public class trabalho1{
     }
 
     // Merge Sort
-
     public static void mergeSort(ArrayList<String> palavras, int inicio, int fim)
     {
         if(inicio < fim)
@@ -151,7 +147,6 @@ public class trabalho1{
 
             mergeSort(palavras, inicio, meio);
             mergeSort(palavras, meio + 1, fim);
-
             merge(palavras, inicio, meio, fim);
         }
     }
@@ -167,7 +162,9 @@ public class trabalho1{
         for(int i = meio + 1; i <= fim; i++)
             direita.add(palavras.get(i));
 
-        int i = 0, j = 0, k = inicio;
+        int i = 0;
+        int j = 0;
+        int k = inicio;
 
         while(i < esquerda.size() && j < direita.size())
         {
@@ -198,6 +195,7 @@ public class trabalho1{
             k++;
         }
     }
+
     // Procuras 
     //Procura linear
     public static int procuraLinear(ArrayList<String> palavras,String valor)
@@ -208,23 +206,23 @@ public class trabalho1{
                 index = i;
         return index;
     }
+
     //Procura binaria
-    public static int procuraBinaria(ArrayList<String> palavras,String valor)
+    public static int procuraBinaria(ArrayList<String> palavras, String valor)
     {
-        int min=0;
-        int max=palavras.size();
-        
-        while(min <= max)
+        int min = 0;
+        int max = palavras.size() -1;
+
+        while (min <= max)
         {
             int metade = (min + max) / 2;
-
             int comparacao = palavras.get(metade).compareTo(valor);
 
-            if(comparacao == 0)
+            if (comparacao == 0)
             {
                 return metade;
             }
-            else if(comparacao < 0)
+            else if (comparacao < 0)
             {
                 min = metade + 1;
             }
@@ -235,22 +233,51 @@ public class trabalho1{
         }
         return -1;
     }
-    
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         // Timer Inicialização
         long inicio, fim, tempo;
         inicio=System.currentTimeMillis();
 
-        
-       ArrayList<String> palavras = new ArrayList<>(); 
-       palavras = lerFicheiro(palavras);
-
+        ArrayList<String> palavras = new ArrayList<>(); 
+        palavras = lerFicheiro(palavras);
        
+        //selecao(palavras);
+        //insercao(palavras);
+        //bubblesort(palavras);
+        mergeSort(palavras, 0, palavras.size()-1);
+        //quickSort(palavras, 0, palavras.size()-1);
 
+        System.out.println(procuraLinear(palavras, "Xarões")); // Linear Desorganizado
+        //System.out.println(procuraBinaria(palavras, "Xarões")); // Binario Organizado
+       
         //timer finalização
         fim=System.currentTimeMillis();
         tempo=fim-inicio;
         System.out.println("tarefa executada em "+tempo+" milisegundos");
     }
 }
+// Existem :
+// arruinai 123
+// capitel 109
+// curso 112
+// eslavo 143
+// gravataria 153
+// longo 144
+// obtenhais 130
+// progenitor 158
+// seria 136
+// vaca 132
+
+// Nao Existem :
+// algoritmo 110
+// condicional 133
+// direita 127
+// esquerda
+// grande
+// livros
+// prata
+// silencio
+// verde
+// Xarões
