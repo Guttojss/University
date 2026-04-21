@@ -19,19 +19,19 @@ public class Utente {
         this.consultas = consultas;
     }
 
-    public static String getNome(Utente utente)
+    public String getNome()
     {
-        return utente.nome;
+        return this.nome;
     }
 
-    public static String getSNS(Utente utente)
+    public String getSNS()
     {
-        return utente.sns;
+        return this.sns;
     }
 
-    public static Collection<Consulta> getMarcacoes(Utente utente)
+    public Collection<Consulta> getMarcacoes()
     {
-        return utente.consultas ;
+        return this.consultas ;
     }
 
     public void setNome(String nome)

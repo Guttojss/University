@@ -67,12 +67,12 @@ public class MenuServico extends JDialog {
 	private boolean temUtenteEspera() {
 		// TODO ver qual a próxima senha
 		senha = servico.getProximaSenha();
-		if (senha == null)
+		if (senha.getId() == null)
 			return false;
 
 		// TODO colocar a info nas variáveis
-		String numero = "A12";
-		String nomeUtente = "Joana Ana";
+		String numero = senha.getId();
+		String nomeUtente = senha.getConsulta().getUtente().getNome();
 
 		senhaLbl.setText(numero);
 		utenteLbl.setText(nomeUtente);
@@ -95,9 +95,9 @@ public class MenuServico extends JDialog {
 		Collection<Senha> senhas = servico.getEmEspera();
 		Vector<String> infoSenhas = new Vector<>();
 		for (Senha s : senhas) {
-			// TODO colocar a informação nas variáveis
-			String numeroSenha = "A11";
-			String nomeUtente = "Vitor Virtual";
+			// TODO FEITO colocar a informação nas variáveis
+			String numeroSenha = senha.getId();
+			String nomeUtente = senha.getConsulta().getUtente().getNome();
 
 			infoSenhas.add(numeroSenha + ": " + nomeUtente);
 		}
@@ -108,8 +108,8 @@ public class MenuServico extends JDialog {
 
 	/** Atualiza título, indicando quantos utentes estão em fila de espera */
 	public void atualizarInfo() {
-		// TODO colocar a informação nas variáveis
-		String idServico = "Rad.";
+		// TODO FEITO colocar a informação nas variáveis
+		String idServico = servico.getSala();
 		int nUtentes = servico.getEmEspera().size();
 
 		setTitle(idServico + " utentes: " + nUtentes);

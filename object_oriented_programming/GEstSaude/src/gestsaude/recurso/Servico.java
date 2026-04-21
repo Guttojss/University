@@ -20,20 +20,20 @@ public class Servico {
         this.senhas= senhas;
     }
 
-    public String getId(Servico servico){
-        return servico.id;
+    public String getId(){
+        return this.id;
     }
 
-     public String getDescricao(Servico servico){
-        return servico.descricao;
+     public String getDescricao(){
+        return this.descricao;
     }
 
-     public String getSala(Servico servico){
-        return servico.sala;
+     public String getSala(){
+        return this.sala;
     }
 
-    public Senha getSenha(Servico servico){
-        return servico.senhas;
+    public Senha getSenha(){
+        return this.senhas;
     }
 
     public void setId(String id)

@@ -12,26 +12,31 @@ public class Senha {
 	private GEstSaude gest; // deve ter ligação ao sistema
 		
 	String id;
-
+	Consulta consulta;
 	LocalTime horaEntrada; 
 	LocalTime horaPrevista; 
 
-	private Senha(String id, LocalTime horaEntrada, LocalTime horaPrevista){
+	private Senha(String id, LocalTime horaEntrada, LocalTime horaPrevista, Consulta consulta){
 		this.id = id;
 		this.horaEntrada = horaEntrada;
 		this.horaPrevista = horaPrevista;
+		this.consulta = consulta;
 	}
 
-	public String getId(Senha senha){
-		return senha.id;
+	public String getId(){
+		return this.id;
 	}
 
-	public LocalTime getHoraEntrada(Senha senha){
-		return senha.horaEntrada;
+	public LocalTime getHoraEntrada( ){
+		return this.horaEntrada;
 	}
 
-	public LocalTime getHoraPrevista(Senha senha){
-		return senha.horaPrevista;
+	public LocalTime getHoraPrevista(){
+		return this.horaPrevista;
+	}
+
+	public Consulta getConsulta(){
+		return this.consulta;
 	}
 
 	public void setId(String id){
@@ -44,6 +49,10 @@ public class Senha {
 
 	public void setHoraPrevista(LocalTime prevista){
 		this.horaPrevista = prevista;
+	}
+
+	public void setConsulta(Consulta consulta){
+		this.consulta = consulta;
 	}
 
 	/**

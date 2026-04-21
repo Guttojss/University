@@ -27,18 +27,18 @@ public class Consulta {
 		this.diaMarcacao = dia;
 	}
 
-	public Utente getUtente(Consulta consulta){
-		return consulta.utente;
+	public Utente getUtente(){
+		return this.utente;
 	}
 
-	public Especialidade getEspecialidade(Consulta consulta){
-		 return consulta.especialidade;
+	public Especialidade getEspecialidade(){
+		 return this.especialidade;
 	}
-	public LocalTime getHoraMarcacao(Consulta consulta){
-		 return consulta.horaMarcacao;
+	public LocalTime getHoraMarcacao(){
+		 return this.horaMarcacao;
 	}
-	public LocalDate getDiaMarcacao(Consulta consulta){
-		 return consulta.diaMarcacao;
+	public LocalDate getDiaMarcacao(){
+		 return this.diaMarcacao;
 	}
 
 	public void setUtente(Utente utente){
@@ -59,7 +59,21 @@ public class Consulta {
 	// Metodos
 	public boolean estaValidada() {
 		// TODO implementar este método
-		return false;
+		if(utente.sns == null)
+			return false;
+		if(especialidade.id == null)
+			return false;
+		
+		return true;
+		// return false;
 	}
 
 }
+
+/*
+- O utente tem de estar identificado;
+- A especialidade tem de estar identificada;
+- O horário deve estar entre as 8h10 e as 19:50;
+- O intervalo entre consultas na mesma especialidade deve ser de 10 minutos;
+- O utente não pode ter duas consultas, no mesmo dia, com diferença inferior a 3 horas; 
+*/

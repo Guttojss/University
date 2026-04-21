@@ -80,14 +80,14 @@ public class EditorConsulta extends JDialog {
 		this.consulta = consulta;
 		this.gest = g;
 
-		// TODO usar uma lista com os ids das especialidades
-		setupAspeto(java.util.List.of("Ped1."));
+		// TODO FEITO usar uma lista com os ids das especialidades
+		setupAspeto(java.util.List.of(especialidade.getId(especialidade)));
 
 		// se for uma consulta existente é preciso carregar os dados desta
 		if (consulta != null) {
-			// TODO colocar os dados certos nas variáveis
-			String snsUtente = "123";
-			String idEspecialidade = "Especial de corrida";
+			// TODO  FEITO colocar os dados certos nas variáveis
+			String snsUtente = consulta.getUtente(consulta).getSNS(utente);
+			String idEspecialidade = consulta.getEspecialidade(consulta).getId(especialidade);
 			data = LocalDate.now();
 			hora = LocalTime.now();
 
@@ -117,14 +117,13 @@ public class EditorConsulta extends JDialog {
 	 * Deve dar indicações de erro.
 	 */
 	protected void testaIdUtente() {
-		// TODO ver se o utente existe
-		utente = null;
-		if (utente == null) {
+		// TODO FEITO ver se o utente existe
+		if (utente.getSNS(utente) == null) {
 			apresentarMensagem("Id do utente é inválido!", false);
 			nomeUtente.setText("");
 		} else {
-			// TODO substituir texto pelo nome do utente
-			nomeUtente.setText("NOME DO UTENTE");
+			// TODO FEITO substituir texto pelo nome do utente
+			nomeUtente.setText(utente.getNome(utente));
 			testaTudoOk();
 		}
 	}
@@ -134,17 +133,15 @@ public class EditorConsulta extends JDialog {
 	 * Deve dar indicações de erro.
 	 */
 	protected void testaIdServico() {
-		// TODO ver se o id da especialidade escolhida é válido
+		// TODO FEITO ver se o id da especialidade escolhida é válido
 		String idEscolhido = (String) idEspecialidadeCB.getSelectedItem();
 
-		Especialidade esp = null;
-		if (esp == null) {
+		if (especialidade.getId(especialidade) == null) {
 			apresentarMensagem("Especialidade não reconhecida!", false);
 			nomeServico.setText("");
 		} else {
-			especialidade = esp;
-			// TODO substituir texto pela descrição da especialidade
-			nomeServico.setText("ESPECIALIDADE");
+			// TODO FEITO substituir texto pela descrição da especialidade
+			nomeServico.setText(especialidade.getDescricao(especialidade));
 			testaTudoOk();
 		}
 	}
