@@ -81,13 +81,13 @@ public class EditorConsulta extends JDialog {
 		this.gest = g;
 
 		// TODO FEITO usar uma lista com os ids das especialidades
-		setupAspeto(java.util.List.of(especialidade.getId(especialidade)));
+		setupAspeto(java.util.List.of(especialidade.getId()));
 
 		// se for uma consulta existente é preciso carregar os dados desta
 		if (consulta != null) {
 			// TODO  FEITO colocar os dados certos nas variáveis
-			String snsUtente = consulta.getUtente(consulta).getSNS(utente);
-			String idEspecialidade = consulta.getEspecialidade(consulta).getId(especialidade);
+			String snsUtente = consulta.getUtente().getSNS();
+			String idEspecialidade = consulta.getEspecialidade().getId();
 			data = LocalDate.now();
 			hora = LocalTime.now();
 
@@ -118,12 +118,12 @@ public class EditorConsulta extends JDialog {
 	 */
 	protected void testaIdUtente() {
 		// TODO FEITO ver se o utente existe
-		if (utente.getSNS(utente) == null) {
+		if (utente.getSNS() == null) {
 			apresentarMensagem("Id do utente é inválido!", false);
 			nomeUtente.setText("");
 		} else {
 			// TODO FEITO substituir texto pelo nome do utente
-			nomeUtente.setText(utente.getNome(utente));
+			nomeUtente.setText(utente.getNome());
 			testaTudoOk();
 		}
 	}
@@ -136,12 +136,12 @@ public class EditorConsulta extends JDialog {
 		// TODO FEITO ver se o id da especialidade escolhida é válido
 		String idEscolhido = (String) idEspecialidadeCB.getSelectedItem();
 
-		if (especialidade.getId(especialidade) == null) {
+		if (especialidade.getId() == null) {
 			apresentarMensagem("Especialidade não reconhecida!", false);
 			nomeServico.setText("");
 		} else {
 			// TODO FEITO substituir texto pela descrição da especialidade
-			nomeServico.setText(especialidade.getDescricao(especialidade));
+			nomeServico.setText(especialidade.getDescricao());
 			testaTudoOk();
 		}
 	}
