@@ -11,7 +11,7 @@ public class Servico {
     String id;
     String descricao;
     String sala;
-    Senha senhas;
+    Senha senhas; // tem que ser uma lista 
 
     private Servico(String id,String descricao,String sala,Senha senhas){
         this.id= id;

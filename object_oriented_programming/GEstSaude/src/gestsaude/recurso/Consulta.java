@@ -63,9 +63,10 @@ public class Consulta {
 			return false;
 		if(especialidade.id == null)
 			return false;
-		
+		if(this.getHoraMarcacao().isBefore(LocalTime.of(8, 10)) || this.getHoraMarcacao().isAfter(LocalTime.of(19, 50)))
+			return false;
+
 		return true;
-		// return false;
 	}
 
 }
@@ -74,6 +75,7 @@ public class Consulta {
 - O utente tem de estar identificado;
 - A especialidade tem de estar identificada;
 - O horário deve estar entre as 8h10 e as 19:50;
+
 - O intervalo entre consultas na mesma especialidade deve ser de 10 minutos;
 - O utente não pode ter duas consultas, no mesmo dia, com diferença inferior a 3 horas; 
 */
