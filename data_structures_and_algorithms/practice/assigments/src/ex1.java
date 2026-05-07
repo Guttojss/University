@@ -1,6 +1,4 @@
 package practice.assigments.src;
-
-
 public class ex1 {
     //Cria um vetor : vetor[1] = 1 | vetor[2]=2 ...
     public static int[] criarVetorOrdenado(int[] vetor,int tam)

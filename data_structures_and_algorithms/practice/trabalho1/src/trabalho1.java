@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class trabalho1{
     
     //Ler o palavras.txt
@@ -151,7 +150,7 @@ public class trabalho1{
 
             mergeSort(palavras, inicio, meio);
             mergeSort(palavras, meio + 1, fim);
-
+            
             merge(palavras, inicio, meio, fim);
         }
     }
