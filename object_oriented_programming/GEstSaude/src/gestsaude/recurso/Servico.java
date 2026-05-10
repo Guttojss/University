@@ -11,28 +11,30 @@ public class Servico {
     String id;
     String descricao;
     String sala;
-    String[] senhas;
+    Senha senhas; // tem que ser uma lista 
 
-    private Servico(String id,String descricao,String sala){
+    private Servico(String id,String descricao,String sala,Senha senhas){
         this.id= id;
         this.descricao=descricao;
         this.sala=sala;
+        this.senhas= senhas;
     }
 
-    // Getters
-    public String getId(Servico servico){
+    public String getId(){
         return this.id;
     }
 
-     public String getDescricao(Servico servico){
+     public String getDescricao(){
         return this.descricao;
     }
 
-     public String getSala(Servico servico){
+     public String getSala(){
         return this.sala;
     }
 
-    //Setters
+    public Senha getSenha(){
+        return this.senhas;
+    }
 
     public void setId(String id)
     {

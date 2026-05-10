@@ -23,7 +23,7 @@ import poo.util.RelogioSimulado;
 
 /**
  * Classe responsavel pelo arranque do sistema.
- * Tem um método para criar a configuração de teste
+ * Tem um método para criar a configuração de teste 
  */
 public class Arranque {
 
