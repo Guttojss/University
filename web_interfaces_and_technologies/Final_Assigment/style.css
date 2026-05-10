@@ -1,0 +1,301 @@
+body{
+  background-color: #3f3f3f;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+/* NAVBAR */
+
+.custom-navbar{
+  background-color: #ff5757;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px 30px;
+}
+
+.custom-navbar .nav-link{
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.custom-navbar .nav-link:hover{
+  opacity: 0.7;
+}
+
+/* HERO SECTION */
+
+.hero-section{
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+}
+
+/* TEXT */
+
+.hero-title{
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.hero-subtitle{
+  font-size: 1.8rem;
+  color: #e2e2e2;
+}
+
+.hero-text{
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  max-width: 450px;
+}
+
+/* PROFILE IMAGE */
+
+.profile-box{
+  width: 250px;
+  height: 250px;
+  background-color: #ff5757;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.profile-box img{
+  width: 90%;
+  object-fit: contain;
+}
+
+/* ========================= */
+/* EDUCATION / INTERNSHIPS */
+/* ========================= */
+
+.education-section,
+.internship-section{
+  margin-top: 80px;
+}
+
+.section-badge{
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #dcdcdc;
+}
+
+.section-title{
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* CARD */
+
+.education-card{
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.education-card:hover{
+  transform: translateY(-5px);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.card-badge{
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #bdbdbd;
+  float: left;
+}
+
+.education-date{
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.education-card img{
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.education-card h3{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* FOOTER */
+
+.footer{
+  margin-top: 80px;
+  background-color: #ff5757;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer p{
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px){
+
+  .hero-section{
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  .hero-title{
+    font-size: 3rem;
+  }
+
+  .hero-text{
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .profile-box{
+    margin: 30px auto;
+  }
+
+}
+
+@media (max-width: 768px){
+
+  .section-title{
+    font-size: 2.8rem;
+  }
+
+  .footer p{
+    font-size: 1.4rem;
+  }
+}
+
+/* ========================= */
+/* SOCIAL MEDIA */
+/* ========================= */
+
+.social-section{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.social-title{
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.social-subtitle{
+  font-size: 1.8rem;
+  color: #e2e2e2;
+  margin-top: -10px;
+}
+
+/* EMAIL BOX */
+
+.email-box{
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(180deg, #ff5b5b, #ff4a4a);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 30px;
+  transition: 0.3s;
+}
+
+.email-box:hover{
+  transform: translateY(-5px);
+}
+
+.email-box h3{
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 400;
+  width: 70%;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  gap: 40px;
+  justify-content: center;
+}
+
+.social-icons a{
+  text-decoration: none;
+}
+
+.social-icons img{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.social-icons img:hover{
+  transform: scale(1.08);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 991px){
+
+  .social-section{
+    text-align: center;
+  }
+
+  .email-box{
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  .social-icons{
+    grid-template-columns: repeat(2, 120px);
+  }
+
+}
+
+@media(max-width: 576px){
+
+  .social-title{
+    font-size: 2.8rem;
+  }
+
+  .social-icons{
+    grid-template-columns: repeat(2, 100px);
+    gap: 25px;
+  }
+
+  .social-icons img{
+    width: 75px;
+    height: 75px;
+  }
+
+  .email-box{
+    width: 230px;
+    height: 230px;
+  }
+
+}
