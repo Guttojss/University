@@ -1,0 +1,6 @@
+* Falta meter as logos de tudo.
+* Meter links no contact.
+* Meter o Forms e a API de Emails.
+* Meter simbolo de Trademark no footer.
+* Fazer o Footer Dinamico (mudar automaticamente o ano).
+* Adicionar os detalhes quando se clica nos cards.
