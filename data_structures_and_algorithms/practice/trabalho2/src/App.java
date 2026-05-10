@@ -1,39 +1,67 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
+// ler ficheiro
+public static "Alguma coisa" lerFicheiro("Alguma coisa" numeros)
+    {
+        File ficheiro = new File("numeros_teste");
+        Scanner leitor = null;
 
-public static void insercao(){
+        try {leitor = new Scanner(ficheiro); } 
+        catch (FileNotFoundException e) 
+        {
+            System.out.println("Ficheiro não encontrado");
+            e.printStackTrace();
+        }
+        while(leitor.hasNextInt())
+        {
+            int aux=leitor.nextInt();
+            numeros.add(aux);
+        }
 
-}
-
-public static void procura(){
-
-}
-
+        leitor.close();
+        
+        return numeros;
+    }
+// apaga numeros do ficheiro
 public static void eliminar(){
     
 }
+// Adiciona numeros ao ficheiro
+public static void insercao(){
+    PrintWritter ficheiro = null;
+    try{ficheiro = new PrintWritter("output.csv");}
+    catch(Exception e){
+        e.printStackTrace();
+        System.exit(0);
+    }
+    ficheiro.print("Isto vai ser escrito");
+    ficheiro.close();
+}
 
-public class Main {
+
 public static void main(String[] args)
 {
-    File ficheiro=new File("numeros_teste.csv");
-    Scanner	input=null;
-    try 
-    {
-        input =	new Scanner(ficheiro);
-    }
-    catch (Exception	e)
-    {
-        e.printStackTrace();
-    }
+    // Timer Inicialização
+        long inicio, fim, tempo;
+        inicio=System.nanoTime();
 
-    while(input.hasNextInt())	
-    {
-        int n=input.nextInt();
-        System.out.println(n);
-    }
+        // mudar isto para outro tipo de dados 
+        "Alguma coisa" numeros = new "Alguma coisa"(); 
+        numeros = lerFicheiro(numeros);
 
-    input.close();
+        //timer finalização
+        fim=System.nanoTime();
+        tempo=fim-inicio;
+        System.out.println("tarefa executada em "+tempo+" nanosegundos");
 }
-}
+
+/*
+Lista Ligada (LL)
+• Lista Ligada Ordenada (LL Ord)
+• Árvore Binária (AB)
+• Árvore Binária Balanceada (AB DSW).
+
+*/
