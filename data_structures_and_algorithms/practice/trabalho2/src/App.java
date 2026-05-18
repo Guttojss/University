@@ -3,8 +3,123 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// Classe da Arvore Binaria
+class arvoreBinaria 
+{
+    private No raiz;
+    private int nElementos;
+
+    arvoreBinaria(int chave) 
+    {
+        this.raiz = new No(chave);
+        this.nElementos = 1;
+    }
+
+    arvoreBinaria() 
+    {
+        this.raiz = null;
+        this.nElementos = 0;
+    }
+
+
+// Nos da arvore Binaria
+    private class No {
+
+        int chave;
+        No esquerda;
+        No direita;
+
+        public No(int elemento) {
+            this.chave = elemento;
+            this.esquerda = null;
+            this.direita = null;
+        }
+    }
+}
+
+// Classe da Lista Ligada
+class ListaLigada {
+
+    private int nElementos;
+    private No cabeca;
+
+    public ListaLigada() {
+        this.cabeca = null;
+        this.nElementos = 0;
+    }
+
+    // Classe de nó da lista
+    private class No {
+
+        int elemento;
+        No proximo;
+
+        No(int numeros) {
+            this.elemento = numeros;
+            this.proximo = null;
+        }
+    }
+
+    public void inserirCabeca(int numeros) {
+        No novoNo = new No(numeros);
+
+        novoNo.proximo = cabeca;
+        cabeca = novoNo;
+        nElementos++;
+    }
+
+    public void inserirCauda(int numeros) {
+        No novoNo = new No(numeros);
+
+        if (cabeca == null) {
+            cabeca = novoNo;
+            nElementos++;
+            return;
+        }
+
+        No ultimo = cabeca;
+
+        while (ultimo.proximo != null) {
+            ultimo = ultimo.proximo;
+        }
+
+        ultimo.proximo = novoNo;
+        nElementos++;
+    }
+
+    // Inserção ordenada crescente
+    public void inserirOrdem(int numeros) {
+
+        No novoNo = new No(numeros);
+
+        // inserir no início
+        if (cabeca == null || cabeca.elemento >= numeros) {
+            novoNo.proximo = cabeca;
+            cabeca = novoNo;
+            nElementos++;
+            return;
+        }
+
+        No atual = cabeca;
+
+        // Procurar posição correta
+        while (atual.proximo != null &&
+               atual.proximo.elemento < numeros) {
+
+            atual = atual.proximo;
+        }
+
+        // Inserção
+        novoNo.proximo = atual.proximo;
+        atual.proximo = novoNo;
+
+        nElementos++;
+    }
+
+}
+
 // ler ficheiro
-public static "Alguma coisa" lerFicheiro("Alguma coisa" numeros)
+public static ListaLigada lerFicheiro(ListaLigada numeros)
     {
         File ficheiro = new File("numeros_teste");
         Scanner leitor = null;
@@ -48,8 +163,7 @@ public static void main(String[] args)
         long inicio, fim, tempo;
         inicio=System.nanoTime();
 
-        // mudar isto para outro tipo de dados 
-        "Alguma coisa" numeros = new "Alguma coisa"(); 
+        ListaLigada numeros = new ListaLigada();
         numeros = lerFicheiro(numeros);
 
         //timer finalização
@@ -59,7 +173,7 @@ public static void main(String[] args)
 }
 
 /*
-Lista Ligada (LL)
+• Lista Ligada (LL)
 • Lista Ligada Ordenada (LL Ord)
 • Árvore Binária (AB)
 • Árvore Binária Balanceada (AB DSW).
