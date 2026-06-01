@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Portfolio</title>
+  <title>Portefolio | Projects</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css">
@@ -14,15 +14,188 @@
 
         <!--Navbar-->
         <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
+          <div class="container-fluid">
+            <!-- FIX 6: botão hambúrguer adicionado para mobile -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav w-100 d-flex justify-content-between">
+              <ul class="navbar-nav w-100 d-flex justify-content-between">
                 <li class="nav-item"><a class="nav-link" href="index.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="projetos.html">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            </ul>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+        <!-- SKILLS -->
+        <section class="skills-section">
+            <h2 class="section-title">Skills</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center">
+                    <div class="github-stats">
+                        
+                        <img src="https://github-readme-streak-stats.herokuapp.com?user=guttojss&theme=dark&background=06101e&ring=ff5757&fire=ff5757&currStreakLabel=ff5757&border=ff5757&border_radius=16" alt="GitHub Streak">
+                    </div>
+                    <div class="languages">
+                        <img src="images/portugal.png" alt="Português">
+                        <img src="images/uk.png" alt="English">
+                        <img src="images/espanha.png" alt="Español">
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <!-- FIX 4: caminhos uniformizados para images/ -->
+                    <div class="skills-grid">
+                        <img src="images/html.png" alt="HTML">
+                        <img src="images/jss.png" alt="JavaScript">
+                        <img src="images/css.png" alt="CSS">
+                        <img src="images/java.png" alt="Java">
+                        <img src="images/cobol.png" alt="COBOL">
+                        <img src="images/mysql.png" alt="SQL">
+                        <img src="images/c.png" alt="C">
+                        <img src="images/cpp.png" alt="C++">
+                        <img src="images/csharp.png" alt="C#">
+                        <img src="images/salesforce.png" alt="Salesforce">
+                        <img src="images/php.png" alt="PHP">
+                        <img src="images/python.png" alt="Python">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects -->
+        <section class="project-section">
+            <h2 class="section-title">Projects</h2>
+            <div class="row g-4 mt-3">
+
+                <!--Projetos escolares-->
+                <div class="col-lg-4 col-md-6">
+                  <div class="project-card"
+                    data-bs-toggle="modal"
+                    data-bs-target="#highSchoolModal">
+                    <h4 class="project-date">2022-2025</h4>
+                    <img src="#" alt="project banner">
+                    <h3>High School projects</h3>
+                  </div>
+                </div>
+
+                <!--PAP-->
+                <!-- FIX 2: target corrigido para #papModal -->
+                <div class="col-lg-4 col-md-6">
+                  <div class="project-card"
+                    data-bs-toggle="modal"
+                    data-bs-target="#papModal">
+                    <h4 class="project-date">July 2024</h4>
+                    <img src="#" alt="project banner">
+                    <h3>High School final project</h3>
+                  </div>
+                </div>
+
+                <!--Universidade-->
+                <!-- FIX 2: target corrigido para #universityModal -->
+                <div class="col-lg-4 col-md-6">
+                  <div class="project-card"
+                    data-bs-toggle="modal"
+                    data-bs-target="#universityModal">
+                    <h4 class="project-date">2025-2028</h4>
+                    <img src="#" alt="project banner">
+                    <!-- FIX 3: "assigments" → "assignments" -->
+                    <h3>University assignments</h3>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal: High School Projects -->
+        <div class="modal fade" id="highSchoolModal" tabindex="-1">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content custom-modal">
+                    <div class="modal-body">
+                        <button class="btn-close btn-close-white float-end"
+                                data-bs-dismiss="modal">
+                        </button>
+                        <h1 class="modal-title-custom">High School Projects</h1>
+                        <p class="modal-subtitle">2022 - 2025</p>
+                        <hr>
+                        <h3>Description</h3>
+                        <p>Todos os projetos realizados durante o curso profissional de Programação.</p>
+                        <h3>Technologies</h3>
+                        <div class="tech-list">
+                            <img src="images/html.png" alt="HTML">
+                            <img src="images/css.png" alt="CSS">
+                            <img src="images/jss.png" alt="JavaScript">
+                        </div>
+                        <a href="https://github.com/Guttojss/Modules" target="_blank" class="github-btn mt-4">
+                            <img src="images/github.png" alt="GitHub"> View on GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        </nav>
+
+        <!-- Modal PAP -->
+        <div class="modal fade" id="papModal" tabindex="-1">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content custom-modal">
+                    <div class="modal-body">
+                        <button class="btn-close btn-close-white float-end"
+                                data-bs-dismiss="modal">
+                        </button>
+                        <h1 class="modal-title-custom">High School Final Project</h1>
+                        <p class="modal-subtitle">July 2024</p>
+                        <hr>
+                        <h3>Description</h3>
+                        <p>Projeto de Aptidão Profissional (PAP) realizado no final do curso.</p>
+                        <h3>Technologies</h3>
+                        <div class="tech-list">
+                            <img src="images/html.png" alt="HTML">
+                            <img src="images/css.png" alt="CSS">
+                        </div>
+                        <a href="https://github.com/Guttojss/Prova-de-Aptidao-Profissional" target="_blank" class="github-btn mt-4">
+                            <img src="images/github.png" alt="GitHub"> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Universidade -->
+        <div class="modal fade" id="universityModal" tabindex="-1">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content custom-modal">
+                    <div class="modal-body">
+                        <button class="btn-close btn-close-white float-end"
+                                data-bs-dismiss="modal">
+                        </button>
+                        <h1 class="modal-title-custom">University Assignments</h1>
+                        <p class="modal-subtitle">2025 - 2028</p>
+                        <hr>
+                        <h3>Description</h3>
+                        <p>Projetos e trabalhos realizados durante o percurso universitário.</p>
+                        <h3>Technologies</h3>
+                        <div class="tech-list">
+                            <img src="images/python.png" alt="Python">
+                            <img src="images/java.png" alt="Java">
+                            <img src="images/mysql.png" alt="SQL">
+                        </div>
+                        <a href="https://github.com/Guttojss/University" target="_blank" class="github-btn mt-4">
+                            <img src="images/github.png" alt="GitHub"> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!--Footer-->
+  <footer class="footer"><p>Copyright Guttojss 2026&copy</p></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+</html>

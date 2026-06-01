@@ -15,36 +15,34 @@
   <div class="container">
 
     <!--Navbar-->
-        <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav w-100 d-flex justify-content-between">
-                <li class="nav-item"><a class="nav-link" href="index.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav w-100 d-flex justify-content-between">
+            <li class="nav-item"><a class="nav-link" href="index.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="projetos.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        </nav>
+      </div>
+    </nav>
 
     <!--About-Me-->
     <section class="hero-section">
       <div class="row align-items-center">
         <div class="col-lg-6">
-          <h1 class="hero-title">
-            Rodrigo Amaro
-          </h1>
-
-          <h3 class="hero-subtitle">
-            Junior Full-Stack Developer
-          </h3>
-
+          <h1 class="hero-title">Rodrigo Amaro</h1>
+          <h3 class="hero-subtitle">Junior Full-Stack Developer</h3>
           <div class="profile-box">
-            <img src="avatar.png" alt="Avatar">
+            <img src="images/avatar.jpg" alt="Avatar">
           </div>
-
         </div>
-
         <div class="col-lg-6 d-flex justify-content-center">
           <p class="hero-text">
             Lorem Ipsum is simply dummy text of the printing and
@@ -64,34 +62,31 @@
       <h2 class="section-title">Education</h2>
       <div class="row g-4 mt-3">
 
-        <!--Frei Heitor Pinto-->
         <div class="col-lg-4 col-md-6">
-          <div class="education-card">
+          <div class="education-card" data-bs-toggle="modal" data-bs-target="#fhpModal">
             <h4 class="education-date">2022-2023</h4>
-            <img src="#" alt="FHP logo">
+            <img src="images/fhp.png" alt="FHP logo">
             <h3>Escola Frei Heitor Pinto</h3>
           </div>
         </div>
 
-        <!--Escola Profissional do Fundao-->
         <div class="col-lg-4 col-md-6">
-          <div class="education-card">
+          <div class="education-card" data-bs-toggle="modal" data-bs-target="#epfModal">
             <h4 class="education-date">2023-2025</h4>
-            <img src="#" alt="EPF logo">
+            <img src="images/epf.png" alt="EPF logo">
             <h3>Escola Profissional do Fundão</h3>
           </div>
         </div>
 
-        <!--Politecnico de Castelo Branco-->
         <div class="col-lg-4 col-md-6">
-          <div class="education-card">
+          <div class="education-card" data-bs-toggle="modal" data-bs-target="#ipcbModal">
             <h4 class="education-date">2025-2028</h4>
-            <img src="#" alt="IPCB logo">
+            <img src="images/ipcb.png" alt="IPCB logo">
             <h3>Politecnico de Castelo Branco</h3>
           </div>
         </div>
-      </div>
 
+      </div>
     </section>
 
     <!--Internships-->
@@ -99,38 +94,148 @@
       <h2 class="section-title">Internships</h2>
       <div class="row g-4 mt-3">
 
-        <!--Kompetenza-->
         <div class="col-lg-4 col-md-6">
-          <div class="education-card">
+          <div class="education-card" data-bs-toggle="modal" data-bs-target="#kompetenzaModal">
             <h4 class="education-date">January 2024</h4>
-            <img src="#" alt="Kompetenza logo">
+            <img src="images/kompetenza.png" alt="Kompetenza logo">
             <h3>Kompetenza</h3>
           </div>
         </div>
 
-        <!--Erasmus-->
         <div class="col-lg-4 col-md-6">
-          <div class="education-card">
+          <div class="education-card" data-bs-toggle="modal" data-bs-target="#erasmusModal">
             <h4 class="education-date">July 2024</h4>
-            <img src="#" alt="Erasmus logo">
+            <img src="images/erasmus.png" alt="Erasmus logo">
             <h3>Erasmus</h3>
           </div>
         </div>
 
-        <!--Universidade da Beira Interior-->
         <div class="col-lg-4 col-md-6">
-          <div class="education-card">
+          <div class="education-card" data-bs-toggle="modal" data-bs-target="#ubiModal">
             <h4 class="education-date">June and July 2025</h4>
-            <img src="#" alt="IPCB logo">
+            <img src="images/ubi.png" alt="UBI logo">
             <h3>Universidade da Beira Interior</h3>
           </div>
         </div>
+
       </div>
     </section>
   </div>
 
+
+  <!-- Modal: Escola Frei Heitor Pinto -->
+  <div class="modal fade" id="fhpModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content custom-modal">
+        <div class="modal-body">
+          <button class="btn-close btn-close-white float-end" data-bs-dismiss="modal"></button>
+          <h1 class="modal-title-custom">Escola Frei Heitor Pinto</h1>
+          <p class="modal-subtitle">2022 - 2023</p>
+          <hr>
+          <h3>Description</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Course</h3>
+          <p>Lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Escola Profissional do Fundão -->
+  <div class="modal fade" id="epfModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content custom-modal">
+        <div class="modal-body">
+          <button class="btn-close btn-close-white float-end" data-bs-dismiss="modal"></button>
+          <h1 class="modal-title-custom">Escola Profissional do Fundão</h1>
+          <p class="modal-subtitle">2023 - 2025</p>
+          <hr>
+          <h3>Description</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Course</h3>
+          <p>Lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Politécnico de Castelo Branco -->
+  <div class="modal fade" id="ipcbModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content custom-modal">
+        <div class="modal-body">
+          <button class="btn-close btn-close-white float-end" data-bs-dismiss="modal"></button>
+          <h1 class="modal-title-custom">Politécnico de Castelo Branco</h1>
+          <p class="modal-subtitle">2025 - 2028</p>
+          <hr>
+          <h3>Description</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Course</h3>
+          <p>Lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal: Kompetenza -->
+  <div class="modal fade" id="kompetenzaModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content custom-modal">
+        <div class="modal-body">
+          <button class="btn-close btn-close-white float-end" data-bs-dismiss="modal"></button>
+          <h1 class="modal-title-custom">Kompetenza</h1>
+          <p class="modal-subtitle">January 2024</p>
+          <hr>
+          <h3>Description</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Location</h3>
+          <p>Lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Erasmus -->
+  <div class="modal fade" id="erasmusModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content custom-modal">
+        <div class="modal-body">
+          <button class="btn-close btn-close-white float-end" data-bs-dismiss="modal"></button>
+          <h1 class="modal-title-custom">Erasmus</h1>
+          <p class="modal-subtitle">July 2024</p>
+          <hr>
+          <h3>Description</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Location</h3>
+          <p>Lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Universidade da Beira Interior -->
+  <div class="modal fade" id="ubiModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content custom-modal">
+        <div class="modal-body">
+          <button class="btn-close btn-close-white float-end" data-bs-dismiss="modal"></button>
+          <h1 class="modal-title-custom">Universidade da Beira Interior</h1>
+          <p class="modal-subtitle">June - July 2025</p>
+          <hr>
+          <h3>Description</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Technologies</h3>
+          <div class="tech-list">
+            <img src="images/placeholder.png" alt="Tech">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!--Footer-->
-  <footer class="footer"><p>Copyright Guttojss 2026</p></footer>
+  <footer class="footer"><p>Copyright Guttojss 2026&copy</p></footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
