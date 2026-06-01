@@ -146,7 +146,7 @@ public static void eliminar(){
 }
 // Adiciona numeros ao ficheiro
 public static void insercao(){
-    PrintWritter ficheiro = null;
+    PrintWritter ficheiro = "numeros_teste.csv";
     try{ficheiro = new PrintWritter("output.csv");}
     catch(Exception e){
         e.printStackTrace();
@@ -177,5 +177,4 @@ public static void main(String[] args)
 • Lista Ligada Ordenada (LL Ord)
 • Árvore Binária (AB)
 • Árvore Binária Balanceada (AB DSW).
-
 */
